@@ -1,0 +1,40 @@
+<div class="container">
+    {{#each userdata}}
+        <div class="col">
+            <div class="card" style="margin-top: 3%;">
+                <div class="card-body">
+                    <h4 class="card-title d-flex justify-content-left align-items-center">
+                        <strong>Nombre: &nbsp;</strong> <p></p>
+                       {{name}}
+                    </h4>
+                   <h4 class="card-title d-flex justify-content-left align-items-center">
+                        <strong>Apellido: &nbsp;</strong> <p></p>
+                       {{lastname}}
+                    </h4>             
+                    <h4 class="card-title d-flex justify-content-left align-items-center">
+                        <strong>email: &nbsp;</strong> <p></p>
+                       {{email}}
+                    </h4>
+                    <h4 class="card-title d-flex justify-content-left align-items-center">
+                        <strong>Teléfono: &nbsp;</strong> <p></p>
+                       {{phone}}
+                    </h4>
+                    <h4 class="card-title d-flex justify-content-left align-items-center">
+                        <strong>Rol: &nbsp;</strong> <p></p>
+                       {{role}}
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        {{else}}
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h1>Error al obtener datos del usuario</h1>
+                
+            </div>
+        </div>
+
+
+    {{/each}}
+</div>
