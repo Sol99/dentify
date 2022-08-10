@@ -1,7 +1,7 @@
 body{
-    background: #1488CC;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #D4E5ED;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #D4E5ED, #a5cddf);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #D4E5ED, #a5cddf); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -18,3 +18,26 @@ body{
 .items:hover{
     background-color:white;
 }
+
+.table-Color{
+    background-color: #347FA0;
+    padding: 30px;
+    border-radius: 1%;
+    box-shadow: 3px 4px 6px #666;
+ }
+
+ .border-color {
+    background-color: #16577a;
+    box-shadow: 4px 2px 10px #666; 
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    margin: 0px 0px 10px 0px;
+    /* font-weight: 100; */
+
+ }
+ .container{
+    max-width: 100%
+ }
+ .styles-button{
+    display: inline-block;
+ }
