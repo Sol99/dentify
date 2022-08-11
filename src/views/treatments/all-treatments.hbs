@@ -1,5 +1,5 @@
 <div class="row">
-    {{#each treatments}}
+    
     <div class="pb-3 border-color">
         <h1 class="fs-2 text-center ">Tratamientos</h1>
     </div>
@@ -15,6 +15,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each treatments}}
                     <tr>
                         <td>{{title}}</td>
                         <td>{{description}}</td>
@@ -50,6 +51,7 @@
                             </div>
                         </td>
                     </tr>
+                    {{/each}}
                     
                 </tbody>
             </table>
@@ -133,5 +135,5 @@
             <img src="/img/boca.png" alt="boca" height="500" width="100%">
         </div>
     </div>
-    {{/each}}
+    
 </div>
