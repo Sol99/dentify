@@ -1,3 +1,40 @@
 <div class="container">
-    <h1>Historias clinicas Pacientes</h1>
+    <table class="table" style="background-color: white">
+  <thead>
+    <tr>
+      <th scope="col">Paciente</th>
+      <th scope="col">DNI</th>
+      <th scope="col">Odontologo</th>
+      <th scope="col">Historia Clinica</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Jose Perez</th>
+      <td>45255144</td>
+      <td>Jose Hernandez</td>
+      <td>Ver</td>
+    </tr>
+    <tr>
+      <th scope="row">Julian Perez</th>
+      <td>333332455</td>
+      <td>Pedro Hernandez</td>
+      <td>Ver</td>
+    </tr>
+    <tr>
+      <th scope="row">Marcelo Perez</th>
+      <td>434556144</td>
+      <td>Pedro Hernandez</td>
+      <td>Ver</td>
+    </tr>
+    {{#each usersdatas}}
+    <tr>
+      <th scope="row">{{nombre}} {{apellido}}</th>
+      <td>{{dni}}</td>
+      <td>Ivan Guasch Vives</td>
+      <td><a href="/users/historias-clinicas/{{_id}}">Ver</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
 </div>

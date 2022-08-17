@@ -76,7 +76,9 @@ router.get('/users/historias-clinicas', isAuthenticated, async (req,res) =>{
     //console.log(userdata[0].apellido);
     if (userdata[0].esOdontologo == true){
         console.log("ACA ENTRA PORQUE ES ODONTOLOGO");
-        const usersdatas = await User.find({esOdontologo: true});
+        const usersdatas = await User.find({esOdontologo: false}).lean();
+       // console.log("imprimiendo");
+       // console.log(usersdatas);
 
         res.render('users/historias-clinicas-pacientes',  { usersdatas });
     }
@@ -84,6 +86,14 @@ router.get('/users/historias-clinicas', isAuthenticated, async (req,res) =>{
         res.render('users/historia-clinica',  { userdata });
     }
 
+});
+
+router.get('/users/historias-clinicas/:id',isAuthenticated, async (req,res) =>{
+    const historia_clinica_paciente = await User.findById({_id: req.params.id}).lean();
+    console.log("ACA SE MUESTRAN LOS DATOS DEL PACIENTE SELECCIONADO");
+    console.log(historia_clinica_paciente);
+    console.log("Fin de mostrado");
+    res.render('users/historia-clinica-paciente', { historia_clinica_paciente });
 });
 
 
