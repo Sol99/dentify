@@ -8,27 +8,27 @@ router.get('/treatments/add', isAuthenticated, (req,res) =>{
 });
 
 router.post('/treatments/new-treatment', isAuthenticated, async (req,res) =>{
-    const { title, description, pacient }= req.body;
+    const { codigo,fecha,caraDiente,importe,matriculaOdontologo,paciente,observaciones}= req.body;
     const errors = [];
-    if (!title) {
-        errors.push({text: 'Por favor ingrese un titulo'});
+    if (!codigo) {
+        errors.push({text: 'Por favor ingrese un codigo'});
     }
-    if (!description) {
-        errors.push({text: 'Por favor ingrese una descripcion'});
+    if (!fecha) {
+        errors.push({text: 'Por favor ingrese una fecha'});
     }
-    if(!pacient){
-        errors.push({text: 'Por favor ingrese el nombre de un paciente'});
+    if(!caraDiente){
+        errors.push({text: 'Por favor ingrese el CARADIENTE de un paciente'});
     }
 
     if (errors.length > 0) {
         res.render('treatments/new-treatment', {
             errors,
-            title,
-            description,
-            pacient
+            codigo,
+            fecha,
+            caraDiente
         });
     } else {
-        const newTreatment = new Treatment({ title, description, pacient});
+        const newTreatment = new Treatment({ codigo,fecha,caraDiente,importe,matriculaOdontologo,paciente,observaciones});
         newTreatment.user = req.user.id;
         await newTreatment.save();
         req.flash('success_msg', 'Tratamiento agregada correctamente!');
@@ -49,8 +49,8 @@ router.get('/treatments/edit/:id',isAuthenticated, async (req,res) =>{
 });
 
 router.put('/treatments/edit-treatment/:id',isAuthenticated, async (req,res) =>{
-    const {title,description,pacient} = req.body;
-    await Treatment.findByIdAndUpdate(req.params.id, {title,description,pacient}).lean();
+    const {codigo,fecha,caraDiente,importe,matriculaOdontologo,paciente,observaciones} = req.body;
+    await Treatment.findByIdAndUpdate(req.params.id, {codigo,fecha,caraDiente,importe,matriculaOdontologo,paciente,observaciones}).lean();
     req.flash('success_msg', 'Tratamiento actualizada correctamente!');
     res.redirect('/treatments');
 });

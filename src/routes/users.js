@@ -11,7 +11,7 @@ router.get('/users/signin', (req,res) =>{
 router.post('/users/signin', passport.authenticate('local', {
     successRedirect: '/notes',
     failureRedirect: '/users/signin',
-    failureFlash: true
+    failureFlash: true,
 }));
 
 router.get('/users/signup', (req,res) =>{
@@ -19,12 +19,12 @@ router.get('/users/signup', (req,res) =>{
 });
 
 router.post('/users/signup', async (req,res) =>{
-    const {name, lastname, email, phone, password, confirm_password, role } = req.body
+    const {nombre, apellido, email, telefono, password, confirm_password, rol, esOdontologo } = req.body
     const errors = [];
-    if (name.length <= 0) {
+    if (nombre.length <= 0) {
         errors.push({text: 'Por favor ingrese su nombre'});
     }
-    if (lastname.length <= 0) {
+    if (apellido.length <= 0) {
         errors.push({text: 'Por favor ingrese su apellido'});
     }
     if (email.length <= 0) {
@@ -37,14 +37,21 @@ router.post('/users/signup', async (req,res) =>{
         errors.push({text: 'La contraseña debe ser de al menos 4 caracteres'});
     }
     if (errors.length > 0) {
-        res.render('users/signup', {errors, name, lastname, email, phone, password, confirm_password, role});
+        res.render('users/signup', {errors, nombre, apellido, email, telefono, password, confirm_password, rol, esOdontologo});
     } else {
         const emailUser = await User.findOne({email: email}).lean();
         if(emailUser){
             req.flash('error_msg', 'El email se encuentra en uso');
             res.redirect('/users/signup');
         }
-        const newUser = new User({name, lastname, email, phone, password, role});
+        //const newUser = new User({nombre, apellido, numeroAfiliado, email, telefono, fechaCumpleanios, password, rol, obraSocial, matricula, calle, numeroCalle, piso, departamento, localidad});
+        const newUser = new User({nombre, apellido, email, telefono, password, rol, esOdontologo});
+        if (rol == "Soy Odontólogo"){
+            newUser.esOdontologo = true;
+        }
+        else{
+            newUser.esOdontologo = false;
+        }
         newUser.password = await newUser.encryptPassword(password);
         await newUser.save();
         req.flash('success_msg', 'Usuario registrado exitosamente!');
@@ -62,6 +69,21 @@ router.get('/users/profile', isAuthenticated, async (req,res) =>{
     const userdata = await User.find({_id: req.user.id}).lean();
     res.render('users/profile',  { userdata });
     console.log(userdata)
+});
+
+router.get('/users/historias-clinicas', isAuthenticated, async (req,res) =>{
+    const userdata = await User.find({_id: req.user.id}).lean();
+    //console.log(userdata[0].apellido);
+    if (userdata[0].esOdontologo == true){
+        console.log("ACA ENTRA PORQUE ES ODONTOLOGO");
+        const usersdatas = await User.find({esOdontologo: true});
+
+        res.render('users/historias-clinicas-pacientes',  { usersdatas });
+    }
+    else{
+        res.render('users/historia-clinica',  { userdata });
+    }
+
 });
 
 

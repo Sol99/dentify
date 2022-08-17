@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const TreatmentSchema = new Schema ({
-    title: { type: String, required: true },
-    description: { type: String, required: true },
-    pacient: {type: String, required: true },
-    date: { type: Date, default: Date.now },
-    user: {type: String}
+    codigo: {type: Number},
+    fecha: { type: Date, default: Date.now },
+    caraDiente: { type: String, required: false },
+    importe: { type: String, required: false },
+    matriculaOdontologo: {type: String, required: false },
+    paciente: {type: String},
+    observaciones: {type: String},
+    user: {type:String}
 });
 
 module.exports = mongoose.model('Treatment', TreatmentSchema);
