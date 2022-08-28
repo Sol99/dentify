@@ -1,0 +1,18 @@
+[
+    {
+        "Code": 10,
+        "Nombre": "Extracción muela"
+    },
+    {
+        "Code":55,
+        "Nombre": "Tratamiento de conducto"
+    },
+    {
+        "Code":545,
+        "Nombre": "Blanqueamiento"
+    },
+    {
+        "Code":5445,
+        "Nombre": "Limpieza"
+    }
+]

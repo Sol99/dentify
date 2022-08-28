@@ -8,6 +8,8 @@
                 <thead>
                     <tr>
                         <th>codigo</th>
+                        <th>nombre tratamiento</th>
+                        <th>Paciente</th>
                         <th>fecha</th>
                         <th>caraDiente</th>
                         <th>importe</th>
@@ -20,6 +22,8 @@
                     {{#each treatments}}
                     <tr>
                         <td>{{codigo}}</td>
+                        <td>{{nombre}}</td>
+                        <td>{{paciente}}</td>
                         <td>{{fecha}}</td>
                         <td>{{caraDiente}}</td>
                         <td>{{importe}}</td>
@@ -43,7 +47,9 @@
                                 </form>
                             </div>
                             <div class="styles-button">
-                                    <button action="/treatments/edit/{{_id}}" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal">
+                                
+                                    <!--<a href="/treatments/edit/{{_id}}" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"></a>-->
+                                    <a href="/treatments/edit/{{_id}}" class="btn btn-primary btn btn-success">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -53,16 +59,27 @@
                                                     d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                             </svg>
                                             Editar
-                                    </button>
+                                    </a>
+                                
                             </div>
                         </td>
-                    </tr>
+                    </tr>                              
                     {{/each}}
                     
                 </tbody>
             </table>
 
+            <!--<div>
+                <p>Hola</p>
+                {{#each datosJson}}
+                <p>entra</p>
+                <p>{{Code}}</p>
+                <p>{{Nombre}}</p>
+                {{/each}}
+            </div>-->
+
             {{!-- Modal editar --}}
+            <!--
              <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="Title" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -108,7 +125,9 @@
                     </div>
 
                 </div>
-            </div>
+            </div>-->
+            
+           
 
             <!-- Modal Agregar tratamiento -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -124,20 +143,59 @@
                         <form action="/treatments/new-treatment" method="POST">
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="title" class="form-label">Ingresa el titulo</label>
-                                    <input type="text" name="title" class="form-control" id="title" placeholder="titulo"
-                                        autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <label for="description" class="form-label">Ingrese la descripcion</label>
-                                    <textarea name="description" class="form-control" id="description"
-                                        placeholder="descripcion" style="margin-top: 3%;"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pacient" class="form-label">Ingrese el nombre del paciente</label>
-                                    <textarea name="pacient" id="pacient" class="form-control" placeholder="paciente"
-                                        style="margin-top: 3%;"></textarea>
-                                </div>
+                                <!--<input type="number" name="codigo" class="form-control" placeholder="Codigo..."
+                                autofocus>-->
+                            </div>
+                            <div class="form-group mt-4">
+                                <select name="nombre">
+
+                                    {{#each datosJson}}
+                                    <option >{{Nombre}}</option>
+                                    {{/each}}
+
+                                </select>
+                            </div> 
+                            <div class="form-group">
+                                <textarea name="fecha" class="form-control"
+                                placeholder="fecha" style="margin-top: 3%;"></textarea>
+                            </div>
+                            <div class="form-group mt-4">
+                                <select name="caraDiente">
+
+                                    <option >Distal</option>
+
+                                    <option >Lingual</option>
+
+                                    <option >Mesial</option>
+
+                                    <option >Palatina</option>
+
+                                    <option >Vestibular</option>
+
+                                </select>
+                            </div> 
+                            <div class="form-group">
+                                <textarea name="importe" class="form-control"
+                                placeholder="importe..." style="margin-top: 3%;"></textarea>
+                            </div>
+
+                            <label > Paciente</label>
+                            <div class="form-group mt-4">
+                                <select name="paciente">
+                                    {{#each pacientes}}
+                                    <option >{{dni}}, {{nombre}} {{apellido}}</option>
+                                    {{/each}}
+                                </select>
+                            </div> 
+                            
+                            <div class="form-group">
+                                <textarea name="paciente" class="form-control"
+                                placeholder="paciente..." style="margin-top: 3%;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="observaciones" class="form-control"
+                                placeholder="observaciones..." style="margin-top: 3%;"></textarea>
+                            </div>
                             </div>
                             <div class="modal-footer">
                                 <button class="btn btn-primary" type="submit">Guardar</button>
@@ -168,7 +226,7 @@
             <button class="btn btn-secondary"  type="submit" style="position: relative; right:130px; top:-135px; border-radius: 60px; height: 30px; width:35px; background-color: transparent; border-radius:10px;" ></button>
             <button class="btn btn-secondary"  type="submit" style="position: relative; right:-315px; top:-195px; border-radius: 60px; height: 30px; width:35px; background-color: transparent; border-radius:10px;" ></button>
             <button class="btn btn-secondary"  type="submit" style="position: relative; right:-280px; top:-230px; border-radius: 60px; height: 30px; width:35px; background-color: transparent; border-radius:10px;" ></button>
-            
+
 
              {{!-- Dientes de arriba --}}
             <button class="btn btn-secondary"  type="submit" style="position: relative; right:-10px; top:-348px; border-radius: 60px; height: 30px; width:35px; background-color: transparent; border-radius:10px;" ></button>
@@ -187,9 +245,6 @@
             <button class="btn btn-secondary"  type="submit" style="position: relative; right:-235px; top:-444px; border-radius: 60px; height: 30px; width:35px; background-color: transparent; border-radius:10px;" ></button>
             <button class="btn btn-secondary"  type="submit" style="position: relative; right:-205px; top:-410px; border-radius: 60px; height: 30px; width:35px; background-color: transparent; border-radius:10px;" ></button>
             <button class="btn btn-secondary"  type="submit" style="position: relative; right:-170px; top:-378px; border-radius: 60px; height: 30px; width:35px; background-color: transparent; border-radius:10px;" ></button>
-
-
-
         </div>
     </div>
     
