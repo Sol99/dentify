@@ -20,7 +20,7 @@
                                 </div>-->
                                 <label for="nombre" class="form-label">Ingrese el tratamiento</label>
                                 <div class="form-group mt-4">
-                                <select name="nombre">
+                                <select class="form-select" name="nombre">
 
                                     {{#each datosJson}}
                                     <option >{{Nombre}}</option>
@@ -28,14 +28,19 @@
 
                                 </select>
                                 </div> 
-                                <div class="form-group">
+                                <!--<div class="form-group">
                                     <label for="fecha" class="form-label">Ingrese la fecha</label>
                                     <textarea name="fecha" class="form-control" id="description"
                                         placeholder="fecha" style="margin-top: 3%;">{{treatment.fecha}}</textarea>
+                                </div>-->
+                                <div class="form-group mt-4">
+                                <p>Seleccione una fecha: <input type="text" id="datepicker" name="fecha" value="{{treatment.fecha}}"></p>
                                 </div>
                                 <div class="form-group mt-4">
                                 <label for="caraDiente" class="form-label">Ingrese la cara del diente</label>
-                                <select name="caraDiente" aria-placeholder="{{treatment.caraDiente}}">
+                                <select id="mySelect" class="form-select" name="caraDiente" aria-placeholder="{{treatment.caraDiente}}">
+                                    
+                                    <option selected style="background-color: aqua;">{{treatment.caraDiente}}</option>
 
                                     <option >Distal</option>
 
@@ -49,16 +54,22 @@
 
                                 </select>
                             </div> 
-                                <!--<div class="form-group">
-                                    <label for="caraDiente" class="form-label">Ingrese la cara del diente</label>
-                                    <textarea name="caraDiente" id="caraDiente" class="form-control" placeholder="caraDiente"
-                                        style="margin-top: 3%;" >{{treatment.caraDiente}}</textarea>
-                                </div>-->
+                                
                                 <div class="form-group" style="display:none;">
                                     <label for="matriculaOdontologo" class="form-label">Ingrese la matricula del Odontologo </label>
                                     <textarea name="matriculaOdontologo" id="matriculaOdontologo" class="form-control" placeholder="matriculaOdontologo"
                                         style="margin-top: 3%;" >30315</textarea>
                                 </div>
+
+                                <label > Paciente</label>
+                                <div class="form-group mt-4">
+                                    <select class="form-select" name="paciente">
+                                        {{#each pacientes}}
+                                        <option >{{dni}}, {{nombre}} {{apellido}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div> 
+
                                 <div class="form-group">
                                     <label for="importe" class="form-label">Ingrese el importe</label>
                                     <textarea name="importe" id="importe" class="form-control" placeholder="importe"
@@ -77,7 +88,4 @@
         </div>
     </div>
 </div>
-
-
-                            
-                        </form>
+</form>

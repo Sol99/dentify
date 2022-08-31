@@ -7,14 +7,14 @@
             <table class="table table-primary border-white text-center">
                 <thead>
                     <tr>
-                        <th>codigo</th>
-                        <th>nombre tratamiento</th>
-                        <th>Paciente</th>
-                        <th>fecha</th>
-                        <th>caraDiente</th>
-                        <th>importe</th>
-                        <th>matriculaOdontologo</th>
-                        <th>observaciones</th>
+                        <th>Codigo</th>
+                        <th>Tratamiento</th>
+                        <th>DNI Paciente</th>
+                        <th>Fecha</th>
+                        <th>Cara</th>
+                        <th>Importe</th>
+                        <th>Matricula del Odontólogo</th>
+                        <th>Observaciones</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -147,7 +147,7 @@
                                 autofocus>-->
                             </div>
                             <div class="form-group mt-4">
-                                <select name="nombre">
+                                <select class="form-select" name="nombre">
 
                                     {{#each datosJson}}
                                     <option >{{Nombre}}</option>
@@ -155,12 +155,15 @@
 
                                 </select>
                             </div> 
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <textarea name="fecha" class="form-control"
                                 placeholder="fecha" style="margin-top: 3%;"></textarea>
+                            </div>-->
+                            <div class="form-group mt-4">
+                                <p>Seleccione una fecha: <input type="text" id="datepicker" name="fecha"></p>
                             </div>
                             <div class="form-group mt-4">
-                                <select name="caraDiente">
+                                <select class="form-select" name="caraDiente">
 
                                     <option >Distal</option>
 
@@ -181,17 +184,13 @@
 
                             <label > Paciente</label>
                             <div class="form-group mt-4">
-                                <select name="paciente">
+                                <select class="form-select" name="paciente">
                                     {{#each pacientes}}
                                     <option >{{dni}}, {{nombre}} {{apellido}}</option>
                                     {{/each}}
                                 </select>
                             </div> 
                             
-                            <div class="form-group">
-                                <textarea name="paciente" class="form-control"
-                                placeholder="paciente..." style="margin-top: 3%;"></textarea>
-                            </div>
                             <div class="form-group">
                                 <textarea name="observaciones" class="form-control"
                                 placeholder="observaciones..." style="margin-top: 3%;"></textarea>

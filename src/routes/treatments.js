@@ -31,29 +31,38 @@ router.post('/treatments/new-treatment', isAuthenticated, async (req,res) =>{
     }
 
     if (errors.length > 0) {
-        res.render('treatments/new-treatment', {
+        data = treatmentsJson;
+        const datosJson = JSON.parse(JSON.stringify(treatmentsJson));//devuelve los tratamientos en colleccion de objetos para renderizarlos en el front
+        const treatments = await Treatment.find({user: req.user.id}).lean().sort({date: 'desc' });
+        const pacientes = await User.find({esOdontologo: false}).lean();
+        
+        res.render('treatments/all-treatments', {
             errors,
-            codigo,
             fecha,
-            caraDiente
+            caraDiente,
+            treatments, 
+            datosJson, 
+            pacientes
         });
     } else {
 
-        console.log("el log es: " + paciente);
+        //console.log("el log es: " + paciente);
         //var resul = paciente.split(',');
         //console.log("resul es:" + resul[0]);
         //console.log(typeof(paciente));
         //console.log(JSON.stringify(paciente));
         //console.log(JSON.stringify(paciente).at(0));
-        console.log("LOG ======================");
-        console.log(Object.values(paciente).at(0));
-        var datospaciente= Object.values(paciente).at(0);
-        var resul = datospaciente.split(',').at(0);
-        console.log("EL RESUL ES:" + resul);
+        //console.log("LOG ======================");
+        //console.log(Object.values(paciente).at(0));
+        //var datospaciente= Object.values(paciente).at(0);
+        //console.log("datospaciente: " + datospaciente);
+        var resul = paciente.split(',').at(0);
+        //console.log("EL RESUL ES:" + resul);
         paciente = resul;
         const datosJson = JSON.parse(JSON.stringify(treatmentsJson));
         let obtenerCodigo = datosJson.find( (item) => (item.Nombre == nombre ));
         codigo = obtenerCodigo.Code;
+        //console.log("Mostramos la fecha: " + fecha);
         const newTreatment = new Treatment({ codigo,nombre,fecha,caraDiente,importe,matriculaOdontologo,paciente,observaciones});
         newTreatment.user = req.user.id;
         await newTreatment.save();
@@ -70,22 +79,25 @@ router.get('/treatments', isAuthenticated, async (req,res)=>{
     //console.log(datosJson); 
     const treatments = await Treatment.find({user: req.user.id}).lean().sort({date: 'desc' });
     const pacientes = await User.find({esOdontologo: false}).lean();
-    console.log(pacientes);
+    //console.log(pacientes);
     res.render('treatments/all-treatments', { treatments, datosJson, pacientes} );
 });
 
 router.get('/treatments/edit/:id',isAuthenticated, async (req,res) =>{
     const treatment = await Treatment.findById(req.params.id).lean();
     data = treatmentsJson;
+    const pacientes = await User.find({esOdontologo: false}).lean();
     const datosJson = JSON.parse(JSON.stringify(treatmentsJson));
-    res.render('treatments/edit-treatment', { treatment, datosJson});
+    res.render('treatments/edit-treatment', { treatment, datosJson, pacientes});
 });
 
 router.put('/treatments/edit-treatment/:id',isAuthenticated, async (req,res) =>{
-    const {nombre,fecha,caraDiente,importe,matriculaOdontologo,paciente,observaciones} = req.body;
+    var {nombre,fecha,caraDiente,importe,matriculaOdontologo,paciente,observaciones} = req.body;
     const datosJson = JSON.parse(JSON.stringify(treatmentsJson));
     let obtenerCodigo = datosJson.find( (item) => (item.Nombre == nombre ));
     codigo = obtenerCodigo.Code;
+    var resul = paciente.split(',').at(0);
+    paciente = resul;
     await Treatment.findByIdAndUpdate(req.params.id, {codigo,nombre,fecha,caraDiente,importe,matriculaOdontologo,paciente,observaciones}).lean();
     req.flash('success_msg', 'Tratamiento actualizada correctamente!');
     res.redirect('/treatments');

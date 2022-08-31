@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const TreatmentSchema = new Schema ({
     codigo: {type: Number},
     nombre: {type: String},
-    fecha: { type: Date, default: Date.now },
+    fecha: { type: String},
     caraDiente: { type: String, required: false },
     importe: { type: String, required: false },
     matriculaOdontologo: {type: String, required: false, default: 30315 },
