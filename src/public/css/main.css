@@ -48,9 +48,10 @@ body{
     width: 0px;
     height: 100%;
     background: rgb(26, 231, 231);
-    transition: all 1s ease;
+    transition: all 1.5s ease;
+    border-radius: 50px 50px 50px 50px
   }
   .boton:hover:before {
   width: 100%;
-  background-color: transparent
+  background-color: #abe2faa6;
   }
