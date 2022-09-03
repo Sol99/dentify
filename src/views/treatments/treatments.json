@@ -1,18 +1,22 @@
 [
     {
         "Code": 10,
-        "Nombre": "Extracción muela"
+        "Nombre": "Extracción muela",
+        "Valor": "$24.500"
     },
     {
         "Code":55,
-        "Nombre": "Tratamiento de conducto"
+        "Nombre": "Tratamiento de conducto",
+        "Valor": "$8.500"
     },
     {
         "Code":545,
-        "Nombre": "Blanqueamiento"
+        "Nombre": "Blanqueamiento",
+        "Valor": "$20.000"
     },
     {
         "Code":5445,
-        "Nombre": "Limpieza"
+        "Nombre": "Limpieza",
+        "Valor": "$10.000"
     }
 ]

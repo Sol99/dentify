@@ -130,10 +130,9 @@
            
 
             <!-- Modal Agregar tratamiento -->
-            <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Nuevo Tratamiento
-            </button>-->
-            <!--
+            </button>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="Title" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -143,26 +142,27 @@
                         </div>
                         <form action="/treatments/new-treatment" method="POST">
                             <div class="modal-body">
-                                <div class="form-group">-->
+                                <div class="form-group">
                                 <!--<input type="number" name="codigo" class="form-control" placeholder="Codigo..."
                                 autofocus>-->
-                            <!--</div>
+                            </div>
                             <div class="form-group mt-4">
                                 <select class="form-select" name="nombre">
 
                                     {{#each datosJson}}
-                                    <option >{{Nombre}}</option>
+                                    <option>{{Nombre}}</option>
                                     {{/each}}
 
                                 </select>
-                            </div> -->
-                            <!--<div class="form-group">
-                                <textarea name="fecha" class="form-control"
-                                placeholder="fecha" style="margin-top: 3%;"></textarea>
-                            </div>-->
-                            <!--<div class="form-group mt-4">
+                            </div>
+                            <div class="form-group mt-4">
                                 <p>Seleccione una fecha: <input type="text" id="datepicker" name="fecha"></p>
                             </div>
+                            
+                            <div class="form-group mt-4" style="display: none;">
+                                <p><input type="text" name="nroDiente" value="{{nroDiente}}" >{{nroDiente}}</p>
+                            </div>
+
                             <div class="form-group mt-4">
                                 <select class="form-select" name="caraDiente">
 
@@ -178,10 +178,10 @@
 
                                 </select>
                             </div> 
-                            <div class="form-group">
+                            <!--<div class="form-group">
                                 <textarea name="importe" class="form-control"
                                 placeholder="importe..." style="margin-top: 3%;"></textarea>
-                            </div>
+                            </div>-->
 
                             <label > Paciente</label>
                             <div class="form-group mt-4">
@@ -204,7 +204,7 @@
                         </form>
                     </div>
                 </div>
-            </div>-->
+            </div>
         </div>
     </div>
     
