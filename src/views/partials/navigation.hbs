@@ -1,86 +1,89 @@
-<nav class="navbar navbar-dark" style="background-color: #347FA0;">
+<nav class="navbar-dark nav-estilos">
   {{!-- Logo --}}
-  <div id="logo">
-    <button style="background-color:#3480a000; border:none;">      
-       <a href="/">
-        <img id="imagen" src="/img/logo.png" width="250px" href="/" />
-       </a>
-    </button>  
-  </div>
-
-
-{{!-- Toggle --}}  
-  <div id="toggler" class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" >
-      <span class="navbar-toggler-icon"></span>
+  
+  <div id="logo" class="nav-estilos">
+    <button style="background-color:#41a1ca00; border:none;">
+      <a href="/">
+        <img src="/img/logo9.png" width="250px" href="/" />
+      </a>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav">
-          <li class="nav-item" style="display:flex">
-            <a class="nav-link link-light fs-6 fw-normal" href="/about">About</a>
-          </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        {{#if user}}
-        
-           <ul class="navbar-nav">
-          <li class="nav-item active" style="display:flex">
-            <a class="nav-link link-light fs-6 fw-normal" href="/notes">Ver notas <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active" style="display:flex">
-            <a class="nav-link link-light fs-6 fw-normal" href="/notes/add">Nueva nota</a>
-          </li>
-           <li class="nav-item active" style="display:flex">
-            <a class="nav-link link-light fs-6 fw-normal" href="/treatments">Ver Tratamientos <span class="sr-only">(current)</span></a>
-          </li>                   
-      </ul>
-        {{else}}
-          <li class="nav-item active" style="display:flex">
-            <a class="nav-link link-light fs-5 fw-normal" href="/users/signin">Login</a>
-          </li>
-          <li class="nav-item active" style="display:flex">
-            <a class="nav-link link-light fs-5 fw-normal" href="/users/signup">Register</a>
-          </li>
-        {{/if}}
-      </ul>
-    </div>
-  </div>
+  
 
-   {{!-- Profile--}}
-   <div id="profile">
+  {{!-- Toggle --}}
+  <a href="#"></a>
+  <div class="d-flex">
+    <ul class="link-style" style="list-style-type: none">
+      <li >
+        <a class="nav-link link-dark fs-6 fw-normal color-link" href="/about">About</a>
+      </li>
+    </ul>
+    {{#if user}}
+    <ul class="navbar-var d-flex link-style" style="list-style-type: none">
+      <li>
+        <a class="nav-link link-dark fs-6 fw-normal color-link" href="/notes">Ver notas <span class="sr-only">(current)</span></a>
+      </li>
+      <li>
+        <a class="nav-link link-dark fs-6 fw-normal color-link" href="/notes/add">Nueva nota</a>
+      </li>
+      <li>
+        <a class="nav-link link-dark color-link fs-6 fw-normal" href="/treatments">Ver Tratamientos <span
+            class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  
+
+  {{else}}
+  <ul class="navbar-var d-flex" style="list-style-type: none">
+  <li>
+    <a class="nav-link link-dark fs-6 fw-normal color-link" href="/users/signin">Login</a>
+  </li>
+  <li>
+    <a class="nav-link link-dark fs-6 fw-normal color-link" href="/users/signup">Register</a>
+  </li>
+  {{/if}}
+  </ul>
+</div>
+</div>
+  {{!-- Profile--}}
+  <div id="profile">
     <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-      </svg>      
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+      aria-controls="offcanvasDarkNavbar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle"
+        viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+        <path fill-rule="evenodd"
+          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+      </svg>
     </button>
 
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+      aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Perfil</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        {{#if user}}
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {{#if user}}
           <li class="nav-item active" style="display:flex">
-            <a class="nav-link link-light fs-6 fw-normal" style="color: black;" href="/users/profile" >Mi Perfil</a>
+            <a class="nav-link link-light fs-6 fw-normal" style="color: black;" href="/users/profile">Mi Perfil</a>
           </li>
-          
+
           <li class="nav-item active" style="display:flex">
-            <a class="nav-link" style="color: black;" href="/users/historias-clinicas">Historia/s Clinica/s <span class="sr-only">(current)</span></a>
+            <a class="nav-link" style="color: black;" href="/users/historias-clinicas">Historia/s Clinica/s <span
+                class="sr-only">(current)</span></a>
           </li>
-          
+
           <li class="nav-item active" style="display:flex">
             <a class="nav-link link-light fs-6 fw-normal" style="color: black;" href="/users/logout">Salir</a>
           </li>
           {{/if}}
-      </ul>    
-        
+        </ul>
+
       </div>
     </div>
   </div>
+
 
 </nav>
