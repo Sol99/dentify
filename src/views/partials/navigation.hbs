@@ -12,13 +12,11 @@
   {{!-- Toggle --}}
   <a href="#"></a>
   <div class="d-flex">
-    <ul class="link-style" style="list-style-type: none">
+    {{#if user}}
+    <ul class="navbar-var d-flex link-style" style="list-style-type: none">
       <li >
         <a class="nav-link link-dark fs-6 fw-normal color-link" href="/about">About</a>
       </li>
-    </ul>
-    {{#if user}}
-    <ul class="navbar-var d-flex link-style" style="list-style-type: none">
       <li>
         <a class="nav-link link-dark fs-6 fw-normal color-link" href="/notes">Ver notas <span class="sr-only">(current)</span></a>
       </li>
@@ -33,7 +31,7 @@
   
 
   {{else}}
-  <ul class="navbar-var d-flex" style="list-style-type: none">
+  <ul class="navbar-var d-flex link-style" style="list-style-type: none">
   <li>
     <a class="nav-link link-dark fs-6 fw-normal color-link" href="/users/signin">Login</a>
   </li>
@@ -45,11 +43,11 @@
 </div>
 </div>
   {{!-- Profile--}}
-  <div id="profile" class="btn-outline-danger">
-    <a class="navbar-brand" href="#"></a>
+  <div id="profile" class="bt btn-outline-light btn-sm">
+    <a href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
       aria-controls="offcanvasDarkNavbar">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle"
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-dark"
         viewBox="0 0 16 16">
         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
         <path fill-rule="evenodd"

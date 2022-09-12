@@ -1,14 +1,14 @@
 body {
   background: #FCFCF8;
   /* fallback for old browsers */
-  background: linear-gradient(90deg, rgb(197, 212, 219) 0%, rgb(227, 239, 239) 35%, rgb(251, 248, 249) 100%);
+  background: linear-gradient(90deg, rgb(197, 212, 219) 0%, rgb(227, 239, 239) 35%, rgb(237, 231, 231) 100%);
   margin: 0px;
   padding: 0px;
   height: 100%;
 }
 
 .modal-styles {
-  background: linear-gradient(90deg, rgb(197, 212, 219) 0%, rgb(227, 239, 239) 35%, rgb(251, 248, 249) 100%);
+  background: linear-gradient(90deg, rgb(197, 212, 219) 0%, rgb(227, 239, 239) 35%, rgb(212, 211, 211) 100%);
 }
 
 .nav-estilos {
@@ -100,12 +100,6 @@ body {
   margin-right: 50%;
 }
 
-#profile {
-  margin-left: 95%;
-  margin-top: -20px;
-  position: absolute;
-  background-color: #265D73;
-}
 
 .barra {
   background-color: black;
