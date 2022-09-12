@@ -133,9 +133,9 @@
             </button>
             <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="Title" aria-hidden="true">
                 <div class="modal-dialog"> 
-                    <div class="modal-content" style="background-color: #2c6c8f;">
+                    <div class="modal-content modal-styles">
                         <div class="modal-header">
-                            <h5 class="modal-title text-white-50" id="Title">Agregar Tratamiento</h5>
+                            <h5 class="modal-title fw-light" id="Title">Agregar Tratamiento</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form action="/treatments/new-treatment" method="POST">
@@ -145,10 +145,10 @@
                                 autofocus>-->
                             </div>
                             <div class="d-flex justify-content-center">
-                            <img src="/img/boca-dientes.png" height="150px">
+                            <img src="/img/boca-dientes.png" height="200px">
                             </div>
                             <div class="form-group mt-4">
-                            <label for="name" class="form-label text-white">Tratamientos</label>
+                            <label for="name" class="form-label fw-bolder">Tratamientos</label>
                                 <select class="form-select" id="name" name="nombre">
 
                                     {{#each datosJson}}
@@ -158,15 +158,15 @@
                                 </select>
                             </div>
                             <div class="form-group mt-4">
-                                <label  class="form-label text-white" for="fecha">Seleccione una fecha:</label>
-                                <input type="date" id="fecha" class="form-control" name="fecha">
+                                <label  class="form-label fw-bold" for="fecha">Seleccione una fecha:</label>
+                                <input type="date" id="datepiker" class="form-control" name="fecha">
                             </div>
                             
                             <div class="form-group mt-4" style="display: none;">
                                 <p><input type="text" name="nroDiente" value="{{nroDiente}}" >{{nroDiente}}</p>
                             </div>
                             <div class="form-group mt-4">
-                            <label for="caraDiente" class="form-label text-white">Cara</label>
+                            <label for="caraDiente" class="form-label fw-bold">Cara</label>
                                 <select class="form-select" id="caraDiente" name="caraDiente">
 
                                     <option >Distal</option>
@@ -187,7 +187,7 @@
                             </div>-->
 
                             <div class="form-group mt-4">
-                            <label for="paciente" class="form-label text-white"> Paciente</label>
+                            <label for="paciente" class="form-label fw-bold"> Paciente</label>
                                 <select class="form-select" id="paciente" name="paciente">
                                     {{#each pacientes}}
                                     <option >{{dni}}, {{nombre}} {{apellido}}</option>
@@ -202,8 +202,8 @@
                             </div>
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-primary" type="submit">Guardar</button>
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                <button class="btn btn-primary modal-button-save" type="submit">Guardar</button>
+                                <button type="button" class="btn btn-danger modal-button-delete" data-bs-dismiss="modal">Cancelar</button>
                             </div>
                         </form>
                     </div>
