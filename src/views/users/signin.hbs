@@ -1,24 +1,26 @@
+<h1 class="fs-2 text-center border-color">Iniciar Sesión</h1>
 <div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card mt-4 text-center">
-            <div class="carde-header mt-4">
-                <h1>Iniciar Sesion</h1>
-                <hr>
-            </div>
-            <img src="/img/logo.png" class="rounded-circle mx-auto d-block m-4 logo" alt="Logo">
-            <div class="card-body">
+    <div class="col-md-5 mx-auto p-4 mb-5">
+        <div class="card mt-1 pb-5 login-styles border-login">
+            <img src="/img/logo9.png" class="rounded-circle mx-auto d-block m-4 logo" alt="Logo" width="350">
+            <div class="card-body ">
                 <form action="/users/signin" method="POST">
                     <div class="form-group">
-                        <input type="email" class="form-control" name="email" 
-                        placeholder="Email" autofocus>
+                        <label for="email" class="form-label fw-bolder">Correo Electronico</label>
+
+                        <input type="email" class="form-control" name="email" placeholder="Email" autofocus>
                     </div>
                     <div class="form-group mt-4">
+                        <label for="password" class="form-label fw-bolder">Contraseña</label>
+
                         <input type="password" name="password" class="form-control" placeholder="Contraseña">
                     </div>
-                    <div class="form-group mt-4">
-                        <button type="submit" class="btn btn-primary btn-block">
-                            Ingresar
-                        </button>
+                    <div class="text-center">
+                        <div class="form-group mt-4 modal-button-save">
+                            <button type="submit" class="btn btn-block link-light">
+                                Ingresar
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
