@@ -157,7 +157,20 @@ body {
 }
 
 
-footer {
-  background-color: #16577a;
-  padding-top: 100px;
+.login-styles{
+  background: linear-gradient(90deg, rgb(217, 228, 234) 0%, rgb(227, 239, 239) 35%, rgb(236, 232, 232) 100%);
 }
+
+
+
+.carousel{
+  height: 20em;
+}
+.carousel-item > img{
+   height: 20em;
+   object-fit: cover;
+}
+
+/* .border-login{
+  border: 30px solid #265D73;
+} */

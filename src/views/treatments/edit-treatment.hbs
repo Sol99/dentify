@@ -1,14 +1,14 @@
 <div class="col-md-5 mx-auto mb-5">
     <div class="card modal-styles">
         <div class="card-header">
-            <h3>Editar Tratamiento</h3>
+            <h5>Editar Tratamiento</h5>
         </div>
         <div class="d-flex justify-content-center">
             <img src="/img/boca-dientes.png" height="200px">
         </div>
         <div class="card-body">
             <form action="/treatments/edit-treatment/{{treatment._id}}?_method=PUT" method="POST">
-                <div class="modal-body">
+                <div>
                     <input type="hidden" name="_method" value="PUT">
                     <div class="form-group">
                         <!--<label for="codigo" class="form-label">Ingresa el codigo</label>
@@ -60,15 +60,15 @@
                     </select>
                 </div>
 
-                <div class="form-group" style="display:none;">
+                <div class="form-group mt-4" style="display:none;">
                     <label for="matriculaOdontologo" class="form-label fw-bold">Ingrese la matricula del Odontologo
                     </label>
                     <textarea name="matriculaOdontologo" id="matriculaOdontologo" class="form-control"
-                        placeholder="matriculaOdontologo" style="margin-top: 3%;">30315</textarea>
+                        placeholder="matriculaOdontologo">30315</textarea>
                 </div>
 
                 <div class="form-group mt-4">
-                    <label for="paciente" class="form-label fw-bold"> Paciente</label>
+                    <label for="paciente" class="form-label fw-bold">Paciente</label>
                     <select class="form-select" id="paciente" name="paciente">
                         {{#each pacientes}}
                         <option>{{dni}}, {{nombre}} {{apellido}}</option>
@@ -77,17 +77,20 @@
                 </div>
                 <div class="form-group mt-4">
                     <label for="importe" class="form-label fw-bold">Ingrese el importe</label>
-                    <imput name="importe" id="importe" class="form-control" placeholder="importe"
-                        style="margin-top: 3%;">{{treatment.importe}}</imput>
-
+                    <textarea name="importe" id="importe" class="form-control"
+                        placeholder="importe">{{treatment.importe}}</textarea>
+                </div>
+                <div class="form-group mt-4">
                     <div class="form-group fw-bold">
                         <label for="observaciones" class="form-label">observaciones</label>
                         <textarea name="observaciones" id="observaciones" class="form-control"
-                            placeholder="observaciones" style="margin-top: 3%;">{{treatment.observaciones}}</textarea>
+                            placeholder="observaciones">{{treatment.observaciones}}</textarea>
                     </div>
                 </div>
-                <div class="form-group" style="margin-top: 3%;">
-                    <button class="btn btn-primary btn-block" type="submit">Guardar</button>
+                <div class="text-center">
+                    <div class="form-group modal-button-save mt-4">
+                        <button class="btn btn-block link-light" type="submit">Guardar</button>
+                    </div>
                 </div>
             </form>
         </div>
