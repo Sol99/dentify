@@ -19,13 +19,16 @@ router.get('/users/signup', (req,res) =>{
 });
 
 router.post('/users/signup', async (req,res) =>{
-    const {nombre, apellido, email, telefono, password, confirm_password, rol, esOdontologo } = req.body
+    const {nombre, apellido, dni, email, telefono, password, confirm_password, rol, esOdontologo } = req.body
     const errors = [];
     if (nombre.length <= 0) {
         errors.push({text: 'Por favor ingrese su nombre'});
     }
     if (apellido.length <= 0) {
         errors.push({text: 'Por favor ingrese su apellido'});
+    }
+    if (dni.length <= 0) {
+        errors.push({text: 'Por favor ingrese su DNI'});
     }
     if (email.length <= 0) {
         errors.push({text: 'Por favor ingrese su correo'});
@@ -37,7 +40,7 @@ router.post('/users/signup', async (req,res) =>{
         errors.push({text: 'La contraseña debe ser de al menos 4 caracteres'});
     }
     if (errors.length > 0) {
-        res.render('users/signup', {errors, nombre, apellido, email, telefono, password, confirm_password, rol, esOdontologo});
+        res.render('users/signup', {errors, nombre, apellido, dni, email, telefono, password, confirm_password, rol, esOdontologo});
     } else {
         const emailUser = await User.findOne({email: email}).lean();
         if(emailUser){
@@ -45,7 +48,7 @@ router.post('/users/signup', async (req,res) =>{
             res.redirect('/users/signup');
         }
         //const newUser = new User({nombre, apellido, numeroAfiliado, email, telefono, fechaCumpleanios, password, rol, obraSocial, matricula, calle, numeroCalle, piso, departamento, localidad});
-        const newUser = new User({nombre, apellido, email, telefono, password, rol, esOdontologo});
+        const newUser = new User({nombre, apellido, dni, email, telefono, password, rol, esOdontologo});
         if (rol == "Soy Odontólogo"){
             newUser.esOdontologo = true;
         }
