@@ -19,10 +19,13 @@ router.get('/users/signup', (req,res) =>{
 });
 
 router.post('/users/signup', async (req,res) =>{
-    const {nombre, apellido, dni, email, telefono, password, confirm_password, rol, esOdontologo } = req.body
+    var {nombre, apellido, dni, email, telefono, password, confirm_password, rol, esOdontologo } = req.body
     const errors = [];
     if (nombre.length <= 0) {
         errors.push({text: 'Por favor ingrese su nombre'});
+    }
+    if(rol == "Seleccione el rol"){
+        errors.push({text: 'Por favor ingrese un rol'});
     }
     if (apellido.length <= 0) {
         errors.push({text: 'Por favor ingrese su apellido'});
