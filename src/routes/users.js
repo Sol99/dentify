@@ -40,16 +40,19 @@ router.post('/users/signup', async (req,res) =>{
         errors.push({text: 'Las contraseñas no coinciden!'});
     }
     if (password.length < 5){
-        errors.push({text: 'La contraseña debe ser de al menos 4 caracteres'});
+        errors.push({text: 'La contraseña debe ser de al menos 5 caracteres'});
+    }
+    const emailUser = await User.findOne({email: email}).lean();
+    if(emailUser){
+        console.log("encontró");
+        //req.flash('error_msg', 'El email se encuentra en uso');
+        errors.push({text: 'El email se encuentra en uso'});
+        //res.render('users/signup', {errors, nombre, apellido, dni, email, telefono, password, confirm_password, rol, esOdontologo});
+        // res.redirect('/users/signup');
     }
     if (errors.length > 0) {
         res.render('users/signup', {errors, nombre, apellido, dni, email, telefono, password, confirm_password, rol, esOdontologo});
     } else {
-        const emailUser = await User.findOne({email: email}).lean();
-        if(emailUser){
-            req.flash('error_msg', 'El email se encuentra en uso');
-            res.redirect('/users/signup');
-        }
         //const newUser = new User({nombre, apellido, numeroAfiliado, email, telefono, fechaCumpleanios, password, rol, obraSocial, matricula, calle, numeroCalle, piso, departamento, localidad});
         const newUser = new User({nombre, apellido, dni, email, telefono, password, rol, esOdontologo});
         if (rol == "Soy Odontólogo"){

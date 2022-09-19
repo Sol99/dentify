@@ -13,7 +13,9 @@
                         <th>Importe</th>
                         <th>Matrícula</th>
                         <th>Observaciones</th>
-                        <th>Acciones</th>
+                        {{#if esOdontologo}}
+                        <th></th>
+                        {{/if}}
                     </tr>
                 </thead>
                 <tbody>
@@ -27,8 +29,10 @@
                         <td>{{importe}}</td>
                         <td>{{matriculaOdontologo}}</td>
                         <td>{{observaciones}}</td>
-
+                         
+                        {{#if ../esOdontologo}}
                         <td>
+                            
                             <div class="styles-button">
                                 <form action="/treatments/delete/{{_id}}?_method=DELETE" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
@@ -43,6 +47,7 @@
                                     </button>
                                 </form>
                             </div>
+                            
                             <div class="styles-button">
 
                                 <!--<a href="/treatments/edit/{{_id}}" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"></a>-->
@@ -57,7 +62,10 @@
                                 </a>
 
                             </div>
+                            
                         </td>
+                         {{/if}}
+                        
                     </tr>
                     {{/each}}
 
@@ -125,6 +133,7 @@
 
 
             <!-- Modal Agregar tratamiento -->
+            {{#if esOdontologo}}
             <button type="button" class="btn style-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Nuevo Tratamiento
             </button>
@@ -207,6 +216,7 @@
                     </div>
                 </div>
             </div>
+            {{/if}}
         </div>
     </div>
 

@@ -14,7 +14,9 @@
                         <th>Importe</th>
                         <th>Matricula</th>
                         <th>Observaciones</th>
+                        {{#if esOdontologo}}
                         <th></th>
+                        {{/if}}
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +31,7 @@
                         <td>{{importe}}</td>
                         <td>{{matriculaOdontologo}}</td>
                         <td>{{observaciones}}</td>
-
+                        {{#if ../esOdontologo}}
                         <td>
                             <div class="styles-button">
                                 <form action="/treatments/delete/{{_id}}?_method=DELETE" method="POST">
@@ -60,6 +62,7 @@
 
                             </div>
                         </td>
+                        {{/if}}
                     </tr>
                     {{/each}}
 

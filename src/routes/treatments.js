@@ -40,24 +40,12 @@ router.post('/treatments/new-treatment', isAuthenticated, async (req,res) =>{
         });
     } else {
 
-        //console.log("el log es: " + paciente);
-        //var resul = paciente.split(',');
-        //console.log("resul es:" + resul[0]);
-        //console.log(typeof(paciente));
-        //console.log(JSON.stringify(paciente));
-        //console.log(JSON.stringify(paciente).at(0));
-        //console.log("LOG ======================");
-        //console.log(Object.values(paciente).at(0));
-        //var datospaciente= Object.values(paciente).at(0);
-        //console.log("datospaciente: " + datospaciente);
         var resul = paciente.split(',').at(0);
-        //console.log("EL RESUL ES:" + resul);
         paciente = resul;
         const datosJson = JSON.parse(JSON.stringify(treatmentsJson));
         let obtenerCodigo = datosJson.find( (item) => (item.Nombre == nombre ));
         codigo = obtenerCodigo.Code;
         importe = obtenerCodigo.Valor;
-        //console.log("Mostramos la fecha: " + fecha);
         const newTreatment = new Treatment({ codigo,nombre,fecha,caraDiente,nroDiente,importe,matriculaOdontologo,paciente,observaciones});
         newTreatment.user = req.user.id;
         await newTreatment.save();
@@ -71,54 +59,50 @@ router.post('/treatments/new-treatment', isAuthenticated, async (req,res) =>{
 router.get('/treatments', isAuthenticated, async (req,res)=>{
     data = treatmentsJson;
     const datosJson = JSON.parse(JSON.stringify(treatmentsJson));//devuelve los tratamientos en colleccion de objetos para renderizarlos en el front
-    //console.log(datosJson); 
+    var esOdontologo;
+
     if (req.user.esOdontologo){
-        //console.log("======================================INGRESA ODONTOLOGO");
+        //INGRESA ODONTOLOGO
         var treatments = await Treatment.find({user: req.user.id}).lean().sort({date: 'desc' });
         var pacientes = await User.find({esOdontologo: false}).lean();
+        var esOdontologo = true;
     }
     else{
-        //console.log("======================================INGRESA PACIENTE");
+        //INGRESA PACIENTE
         var dnipaciente = req.user.dni;
         var arreglo = new Array;
         arreglo.push(dnipaciente.toString());
-        //console.log(arreglo);
-        //console.log(dnipaciente);
         var treatments = await Treatment.find({paciente: arreglo}).lean().sort({date: 'desc' });
         var pacientes = await User.find({esOdontologo: false}).lean();
+        var esOdontologo = false;
     }
     //console.log(pacientes);
-    res.render('treatments/all-treatments', { treatments, datosJson, pacientes} );
+    res.render('treatments/all-treatments', { treatments, datosJson, pacientes, esOdontologo} );
 });
 
 router.post('/treatments/tooth/:number', isAuthenticated, async (req,res)=>{
     var {nroDiente} = req.body;
-    //console.log("EL NRO DE DIENTE ES: " + nroDiente);
     data = treatmentsJson;
     const datosJson = JSON.parse(JSON.stringify(treatmentsJson));//devuelve los tratamientos en colleccion de objetos para renderizarlos en el front
-    //console.log(datosJson); 
+    var esOdontologo1;
     
-    //console.log(treatments);
-    
-    //console.log(pacientes);
 
     if (req.user.esOdontologo){
-        //console.log("======================================INGRESA ODONTOLOGO");
+        //INGRESA ODONTOLOGO
         var treatments = await Treatment.find({nroDiente: nroDiente}).lean().sort({date: 'desc' });
         var pacientes = await User.find({esOdontologo: false}).lean();
+        esOdontologo = true;
     }
     else{
-        //console.log("======================================INGRESA PACIENTE");
+        //INGRESA PACIENTE
         var dnipaciente = req.user.dni;
         var arreglo = new Array;
         arreglo.push(dnipaciente.toString());
-        //console.log(arreglo);
-        //console.log(dnipaciente);
         var treatments = await Treatment.find({nroDiente: nroDiente,paciente: arreglo}).lean().sort({date: 'desc' });
-        //var treatments = await Treatment.find({paciente: arreglo}).lean().sort({date: 'desc' });
         var pacientes = await User.find({esOdontologo: false}).lean();
+        esOdontologo = false;
     }
-    res.render('treatments/all-treatments-tooth', { treatments, datosJson, pacientes, nroDiente} );
+    res.render('treatments/all-treatments-tooth', { treatments, datosJson, pacientes, nroDiente, esOdontologo} );
 });
 
 router.get('/treatments/edit/:id',isAuthenticated, async (req,res) =>{
