@@ -20,7 +20,7 @@ const UserSchema = new Schema({
     piso:{type: Number, required:false, default:0},
     departamento: {type: String, required:false, default:0},
     localidad: {type: String, required:false, default:0}, 
-    dni:{type:Number, default:0}
+    dni:{type:String, default:0}
 });
 
 UserSchema.methods.encryptPassword = async (password) =>{ 
