@@ -11,7 +11,7 @@
 
   {{!-- Toggle --}}
   <a href="#"></a>
-  <div class="d-flex">
+  <div class="d-flex d-print-none">
     {{#if user}}
     <ul class="navbar-var d-flex link-style" style="list-style-type: none">
       <li >
@@ -31,7 +31,7 @@
   
 
   {{else}}
-  <ul class="navbar-var d-flex link-style" style="list-style-type: none">
+  <ul class="navbar-var d-flex link-style d-print-none" style="list-style-type: none">
   <li>
     <a class="nav-link link-dark fs-6 fw-normal color-link" href="/users/signin">Login</a>
   </li>
@@ -43,7 +43,7 @@
 </div>
 </div>
   {{!-- Profile--}}
-  <div id="profile" class="bt btn-outline-light btn-sm">
+  <div id="profile" class="bt btn-outline-light btn-sm d-print-none">
     <a href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
       aria-controls="offcanvasDarkNavbar">
