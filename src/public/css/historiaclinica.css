@@ -1,0 +1,11 @@
+@media print{
+    #listado{
+      border: 10px solid #60bde2;
+      font-size: 250%;
+    }
+
+    #nombre{
+        font-size: 250%;
+        border: 10px solid;
+    }
+  }
