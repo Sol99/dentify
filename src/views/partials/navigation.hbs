@@ -1,7 +1,7 @@
-<nav class="navbar-dark nav-estilos">
+<nav class="navbar-dark nav-estilos" >
   {{!-- Logo --}}
   
-  <div id="logo" class="nav-estilos">
+  <div id="logo" class="nav-estilos" >
     <button style="background-color:#41a1ca00; border:none;">
       <a href="/">
         <img src="/img/logo9.png" width="250px" href="/" />
@@ -11,36 +11,37 @@
 
   {{!-- Toggle --}}
   <a href="#"></a>
-  <div class="d-flex">
-    {{#if user}}
-    <ul class="navbar-var d-flex link-style" style="list-style-type: none">
-      <li >
-        <a class="nav-link link-dark fs-6 fw-normal color-link" href="/about">About</a>
-      </li>
-      <li>
-        <a class="nav-link link-dark fs-6 fw-normal color-link" href="/notes">Ver notas <span class="sr-only">(current)</span></a>
-      </li>
-      <li>
-        <a class="nav-link link-dark fs-6 fw-normal color-link" href="/notes/add">Nueva nota</a>
-      </li>
-      <li>
-        <a class="nav-link link-dark color-link fs-6 fw-normal" href="/treatments">Ver Tratamientos <span
-            class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-  
+    <div class="d-flex" >
+      {{#if user}}
+      <ul class="navbar-var d-flex link-style" style="list-style-type: none">
+        <li >
+          <a class="nav-link link-dark fs-6 fw-normal color-link" href="/about">About</a>
+        </li>
+        <li>
+          <a class="nav-link link-dark fs-6 fw-normal color-link" href="/notes">Ver notas <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link link-dark fs-6 fw-normal color-link" href="/notes/add">Nueva nota</a>
+        </li>
+        <li>
+          <a class="nav-link link-dark color-link fs-6 fw-normal" href="/treatments">Ver Tratamientos <span
+              class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    
 
-  {{else}}
-  <ul class="navbar-var d-flex link-style" style="list-style-type: none">
-  <li>
-    <a class="nav-link link-dark fs-6 fw-normal color-link" href="/users/signin">Login</a>
-  </li>
-  <li>
-    <a class="nav-link link-dark fs-6 fw-normal color-link" href="/users/signup">Register</a>
-  </li>
-  {{/if}}
-  </ul>
-</div>
+    {{else}}
+    <ul class="navbar-var d-flex link-style" style="list-style-type: none">
+    <li>
+      <a class="nav-link link-dark fs-6 fw-normal color-link" href="/users/signin">Login</a>
+    </li>
+    <li>
+      <a class="nav-link link-dark fs-6 fw-normal color-link" href="/users/signup">Register</a>
+    </li>
+    {{/if}}
+    </ul>
+  </div>
+
 </div>
   {{!-- Profile--}}
   <div id="profile" class="bt btn-outline-light btn-sm">
@@ -82,6 +83,7 @@
       </div>
     </div>
   </div>
+ 
 
 
 </nav>
