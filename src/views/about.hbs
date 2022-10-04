@@ -1,6 +1,77 @@
-<div class="jumbotron-mt-4">
-    <div class="card-body">
-        <h1>About</h1>
-        <p> Sobre la app</p>        
+<div class="jumbotron-mt-4" >
+        {{#if esOdontologo}}
+
+        {{/if}}    
+        <div class="jumbotron">
+            <h1 class="display-4">¡Bienvenido Paciente!</h1>
+            <hr class="my-4">
+        </div>  
+
+        <div class="jumbotron" style="text-align: center; background-color:aliceblue; margin-top: 50px; height: 500px">
+            <h2 class="display-4" style="text-align: center; margin: 90px;" >En esta pagina podra llevar un control de los tratamientos que le realizamos</h2>
+            <div class="row container-fluid" style="justify-content: center;">
+                <div class="col-sm-3" >
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ver historia clinica</h5>
+                            <p class="card-text">Podra ver todos los tratamientos realizados</p>
+                                <a class="btn btn-info" href="/users/historias-clinicas"> Acceder <span class="sr-only">(current)</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Perfil</h5>
+                            <p class="card-text">Podra ver toda su informacion y poder editarla</p>
+                            <a href="/users/profile" class="btn btn-success">Acceder</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Consultar presupuestos</h5>
+                            <p class="card-text">Podra ver los presupuestos disponibles</p>
+                            <a href="#" class="btn btn-warning">Acceder</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {{!-- Datos del local --}}
+        <div class="jumbotron" style="text-align: center; background-color:aliceblue; margin-top: 50px;">
+            <hr class="my-4">
+            <h1 class="display-5">Nuestro centro</h1>    
+            <hr class="my-4">    
+
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="margin-top: -10px;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/img/consultorio/consultorio-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/consultorio/consultorio-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>       
+        </div>  
+
+    {{!-- Datos de la ubicacion --}}
+        <div class="jumbotron" style="text-align: center; background-color:aliceblue; margin: -20px; margin-top: 150px;">
+            <hr class="my-4">
+            <h1 class="display-5">Nos encontramos en Hipólito Irigoyen N° 8419, de la ciudad de Lomas de Zamora, Provincia de Buenos Aires</h1>   
+            <hr class="my-4">           
+        </div>  
+
+        <div class="jumbotron jumbotron-fluid">
+            
+            <div style="margin: 10px;text-align: left;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.080732841854!2d-58.40341688424927!3d-34.753559072949706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd290b9268e3f%3A0x1921ca8cce2572ca!2sAv.%20Hip%C3%B3lito%20Yrigoyen%208419%2C%20B1832BRB%20Lomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1664858080158!5m2!1ses!2sar" 
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+        </div>
     </div>
-</div>
+
