@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="panel panel-primary" style="background-color: White;">
-        <div class="panel-heading" style="background-color: #438FA2;">
+    <div class="panel panel-primary d-print-none" style="background-color: White;">
+        <div class="panel-heading" style="background-color: orange;">
             <h3 class="panel-title">Información General</h3>
         </div>
-        <div class="panel-body" >
-            <ul>
+        <div class="panel-body">
+            <ul id="listado">
                 
-                <li>
+                <li id="nombre">
                     Apellido: {{historia_clinica_paciente.apellido}}
                 </li>
                 
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <div class="panel panel-primary" style="background-color: White;">
+    <div class="panel panel-primary d-print-none" style="background-color: White;">
         <div class="panel-heading" style="background-color: orange;">
             <h3 class="panel-title">Datos de Domicilio</h3>
         </div>
@@ -58,4 +58,167 @@
             </ul>
         </div>
     </div>
+
+    <form>
+        <input class="d-print-none btn btn-light btn-sm" type="button" name="imprimir" value="Imprimir" onclick="window.print();">   
+    </form>
+
+{{!-- Esto es lo que se ve al momento de imprimir --}}
+    <div class="d-block d-sm-none">
+
+        <p class="h1 text-center">Historia Clinica</p>
+
+
+    <table class="table table-sm d-sm-none">
+    <thead>
+        <tr>
+            <th scope="col">Informacion General</th>
+        </tr>
+    </thead>
+  <tbody class="border border-primary ">
+    <tr>
+      <th scope="row">Apellido</th>
+      <td>{{historia_clinica_paciente.apellido}} </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">Nombre</th>
+      <td>{{historia_clinica_paciente.nombre}}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">Numero de Afiliado</th>
+      <td>{{historia_clinica_paciente.numeroAfiliado}} </td>
+      <td></td>     
+    </tr>
+    <tr>
+      <th scope="row">Fecha de nacimiento</th>
+      <td>{{historia_clinica_paciente.fechaCumpleanios}}</td>
+      <td></td>     
+    </tr>
+    <tr>
+      <th scope="row">e-mail</th>
+      <td>{{historia_clinica_paciente.email}}</td>
+      <td></td>     
+    </tr>
+    <tr>
+      <th scope="row">Nro telefono</th>
+      <td>{{historia_clinica_paciente.telefono}}</td>
+      <td></td>     
+    </tr>
+    <tr>
+      <th scope="row"> Obra Social</th>
+      <td>{{historia_clinica_paciente.obraSocial}}</td>
+      <td></td>     
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-sm d-sm-none">
+    <thead>
+        <tr>
+            <th scope="col">Datos de Domicilio</th>
+        </tr>
+    </thead>
+  <tbody class="border border-primary">
+    <tr>
+      <th scope="row">Calle</th>
+      <td>{{historia_clinica_paciente.calle}}</td>
+     
+    </tr>
+    <tr>
+      <th scope="row">Numero</th>
+      <td>{{historia_clinica_paciente.numeroCalle}}</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Piso</th>
+      <td>{{historia_clinica_paciente.piso}}</td>
+     
+    </tr>
+    <tr>
+      <th scope="row">Depto</th>
+      <td>{{historia_clinica_paciente.departamento}}</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Localidad</th>
+      <td>{{historia_clinica_paciente.localidad}}</td>
+     
+    </tr>
+     </tbody>
+</table>
+
+
+
+        <table class="table table-striped table-light table-hover mt-5">
+                <thead class="table-Color">
+                    <tr>
+                        <th>Código</th>
+                        <th>Tratamiento</th>
+                        <th>Nº Diente</th>
+                        <th>Fecha</th>
+                        <th>Cara</th>
+                        <th>Importe</th>
+                        <th>Matricula</th>
+                        <th>Observaciones</th>
+                        {{#if esOdontologo}}
+                        <th></th>
+                        {{/if}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each treatments}}
+                    <tr>
+                        <td>{{codigo}}</td>
+                        <td>{{nombre}}</td>
+                        <td>{{nroDiente}}</td>
+                        <td>{{paciente}}</td>
+                        <td>{{fecha}}</td>
+                        <td>{{caraDiente}}</td>
+                        <td>{{importe}}</td>
+                        <td>{{matriculaOdontologo}}</td>
+                        <td>{{observaciones}}</td>
+                        {{#if ../esOdontologo}}
+                        <td>
+                            <div class="styles-button">
+                                <form action="/treatments/delete/{{_id}}?_method=DELETE" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-outline-danger btn-sm" type="submit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-dark" width="16" height="25"
+                                            fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path
+                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                            <path fill-rule="evenodd"
+                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="styles-button">
+
+                                <!--<a href="/treatments/edit/{{_id}}" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"></a>-->
+                                <a href="/treatments/edit/{{_id}}" class="btn btn-outline-success btn-sm ">
+                                    <svg class="text-dark" xmlns="http://www.w3.org/2000/svg" width="16" height="25"
+                                        fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path
+                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd"
+                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg>
+                                </a>
+
+                            </div>
+                        </td>
+                        {{/if}}
+                    </tr>
+                    {{/each}}
+
+                </tbody>
+            </table>
+
+
+    </div>
+
+    
 </div>
