@@ -1,3 +1,4 @@
+<div>
     <div class="row">
         <h1 class="fs-2 text-center border-color ">Tratamientos</h1>
         <div class="d-flex align-items-center">
@@ -212,404 +213,321 @@
             </div>
 
         </div>
+    </div>
 
-
-    {{!-- Opcion 1 --}}
-    <div class="container d-print-none">
-        <div class="row">
-            <div class="col">
-                {{!-- <img class="img-fluid" src="/img/boca.png" alt="boca" style="position: absolute; right: 100px; top:200px; width:15%">  --}}
-                <div>
-                    <img class="img-fluid" src="/img/teeths/Dientes de abajo/paladarinferior3.png"
-                        style="position: fixed; right: 145px; top:520px; width: 250px">
-                    {{!-- Dientes de abajo --}}
-                    {{!-- Molares izquierdos --}}
-                    {{!--Diente 32--}}
-
-        <div>
-                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/paladararriba3.png"
-                            style="display: block; margin: 0 auto; width: 250px">
-                        {{!-- Dientes de arriba lado izquierdo --}}
-                        {{!-- Molares izquierdos--}}
-                        {{!--Diente 1--}}
-                        <form action="/treatments/tooth/1" method="POST">
-                            <input type="hidden" name="nroDiente" value="1">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 348px; top:432px; border-radius: 60px;  background-color: transparent; border-radius:10px; border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/molarizq3.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        {{!--Diente 2--}}
-                        <form action="/treatments/tooth/2" method="POST">
-                            <input type="hidden" name="nroDiente" value="2">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 346px; top:399px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/molarizq2.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        {{!--Diente 3--}}
-                        <form action="/treatments/tooth/3" method="POST">
-                            <input type="hidden" name="nroDiente" value="3">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 338px; top:366px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/molarizq1.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        {{!-- Premolares izquierdos--}}
-                        {{!--Diente 4--}}
-                        <form action="/treatments/tooth/4" method="POST">
-                            <input type="hidden" name="nroDiente" value="4">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 328px; top:338px; border-radius: 150px 150px 150px 150px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolar2.png"
-                                    style="height: 23px; width:30px;">
-                            </button>
-                        </form>
-                        {{!--Diente 5--}}
-                        <form action="/treatments/tooth/5" method="POST">
-                            <input type="hidden" name="nroDiente" value="5">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 317px; top:316px; border-radius: 100px 150px 150px 150px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolarizq1.png"
-                                    style="height: 23px; width:30px;">
-                            </button>
-                        </form>
-                        {{!-- Canino izquierdo --}}
-                        <form action="/treatments/tooth/6" method="POST">
-                            <input type="hidden" name="nroDiente" value="6">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 309px; top:299px; border-radius: 250px 500px 150px 200px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/caninoizq.png"
-                                    style="height: 23px; width:20px;">
-                            </button>
-                        </form>
-                        {{!-- Incisivo lateral izquierdo --}}
-                        <form action="/treatments/tooth/7" method="POST">
-                            <input type="hidden" name="nroDiente" value="7">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 288px; top:291px; border-radius: 250px 250px 250px 500px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivolateralizq.png"
-                                    style="height: 20px; width:25px;">
-                            </button>
-                        </form>
-                        {{!-- Incisivo central izquierdo --}}
-                        <form action="/treatments/tooth/8" method="POST">
-                            <input type="hidden" name="nroDiente" value="8">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 267px; top:287px; border-radius: 250px 250px 250px 500px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivocentralizquierdo.png"
-                                    style="height: 20px; width:25px;">
-                            </button>
-                        </form>
-
-
-                        {{!-- Dientes de arriba lado derecho --}}
-                        {{!-- Incisivo central derecho --}}
-                        <form action="/treatments/tooth/9" method="POST">
-                            <input type="hidden" name="nroDiente" value="9">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 240px; top:287px; border-radius: 250px 250px 250px 500px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivocentralderecho.png"
-                                    style="height: 20px; width:28px;">
-                            </button>
-                        </form>
-                        {{!-- Incisivo lateral derecho --}}
-                        <form action="/treatments/tooth/10" method="POST">
-                            <input type="hidden" name="nroDiente" value="10">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 220px; top:295px; border-radius: 500px 500px 500px 250px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivolateralder.png"
-                                    style="height: 20px; width:25px;">
-                            </button>
-                        </form>
-                        {{!-- Canino derecho --}}
-                        <form action="/treatments/tooth/11" method="POST">
-                            <input type="hidden" name="nroDiente" value="11">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 203px; top:305px; border-radius: 500px 200px 250px 200px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/caninoder.png"
-                                    style="height: 20px; width:25px;">
-                            </button>
-                        </form>
-                        {{!-- Premolares derechos --}}
-                        <form action="/treatments/tooth/12" method="POST">
-                            <input type="hidden" name="nroDiente" value="12">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 190px; top:320px; border-radius: 500px 200px 250px 200px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolarder1.png"
-                                    style="height: 20px; width:28px;">
-                            </button>
-                        </form>
-                        <form action="/treatments/tooth/13" method="POST">
-                            <input type="hidden" name="nroDiente" value="13">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 180px; top:340px; border-radius: 150px 150px 150px 150px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolarder2.png"
-                                    style="height: 23px; width:28px;">
-                            </button>
-                        </form>
-                        {{!-- Molares derechos --}}
-                        <form action="/treatments/tooth/14" method="POST">
-                            <input type="hidden" name="nroDiente" value="14">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 165px; top:368px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar1der.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        <form action="/treatments/tooth/15" method="POST">
-                            <input type="hidden" name="nroDiente" value="15">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 160px; top:400px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar2der.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        {{!--Diente 16--}}
-                        <form action="/treatments/tooth/16" method="POST">
-                            <input type="hidden" name="nroDiente" value="16">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 155px; top:433px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar3der.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                    </div>
-
-        {{!-- Opcion 1 --}}
-        <div class="container">
+    {{!-- Dientes --}}
+    <div class="d-print-none" style="float:right; margin-right: 100px; margin-top: -230px;">
             <div class="row">
                 <div class="col">
-                    <div>
-                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/paladarinferior3.png"
-                            style="display: block; margin: 0 auto ;width: 250px">
-                        {{!-- Dientes de abajo --}}
-                        {{!-- Molares izquierdos --}}
-                        {{!--Diente 32--}}
-                        <form action="/treatments/tooth/32" method="POST">
-                            <input type="hidden" name="nroDiente" value="32">
-                            <button type="submit" class="boton"
-                                style="position: fixed; right: 353px; top:562px; background-color: transparent; border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarizquierdo3.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        {{!--Diente 31--}}
-                        <form action="/treatments/tooth/31" method="POST">
-                            <input type="hidden" name="nroDiente" value="31">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 348px; top:596px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarizquierdo2.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        <form action="/treatments/tooth/30" method="POST">
-                            <input type="hidden" name="nroDiente" value="30">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 342px; top:627px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarizquierdo1.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        {{!-- Premolares izquierdos --}}
-                        <form action="/treatments/tooth/29" method="POST">
-                            <input type="hidden" name="nroDiente" value="29">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 334px; top:655px; border-radius: 100px 60px 150px 60px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/premolarizquierdo2.png"
-                                    style="height: 23px; width:30px;">
-                            </button>
-                        </form>
-                        <form action="/treatments/tooth/28" method="POST">
-                            <input type="hidden" name="nroDiente" value="28">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 323px; top:679px; border-radius: 200px 60px 150px 60px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/premolarizquierdo1.png"
-                                    style="height: 23px; width:25px;">
-                            </button>
-                        </form>
-                        {{!-- Canino izquierdo --}}
-                        <form action="/treatments/tooth/27" method="POST">
-                            <input type="hidden" name="nroDiente" value="27">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 309px; top:692px; border-radius: 200px 60px 150px 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/caninoizquierdo.png"
-                                    style="height: 23px; width:20px;">
-                            </button>
-                        </form>
-                        {{!-- Incisivo lateral izquierdo --}}
-                        <form action="/treatments/tooth/26" method="POST">
-                            <input type="hidden" name="nroDiente" value="26">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 295px; top:700px; border-radius: 170px 150px 60px 50px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/incisivolateralizquierdo.png"
-                                    style="height: 23px; width:20px;">
-                            </button>
-                        </form>
-
-                        {{!-- Incisivo central izquierdo --}}
-                        <form action="/treatments/tooth/25" method="POST">
-                            <input type="hidden" name="nroDiente" value="25">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 278px; top:705px; border-radius: 170px 150px 60px 50px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/incisivocentralizquierdo.png"
-                                    style="height: 23px; width:15px;">
-                            </button>
-                        </form>
-                        {{!-- Incisivo central derecho --}}
-                        <form action="/treatments/tooth/24" method="POST">
-                            <input type="hidden" name="nroDiente" value="24">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 257px; top:705px; border-radius: 50px 100px 10px 10px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/incisivocentralderecho.png"
-                                    style="height: 23px; width:15px;">
-                            </button>
-                        </form>
-                        {{!-- Incisivo lateral derecho --}}
-                        <form action="/treatments/tooth/23" method="POST">
-                            <input type="hidden" name="nroDiente" value="23">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 230px; top:703px; border-radius: 50px 100px 10px 100px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/incisivolateralderecho.png"
-                                    style="height: 23px; width:25px;">
-                            </button>
-                        </form>
-                        {{!-- Canino derecho --}}
-                        <form action="/treatments/tooth/22" method="POST">
-                            <input type="hidden" name="nroDiente" value="22">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 215px; top:695px; border-radius: 50px 100px 10px 100px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/caninoderecho.png"
-                                    style="height: 23px; width:25px;">
-                            </button>
-                        </form>
-                        {{!-- Premolares derechos --}}
-                        <form action="/treatments/tooth/21" method="POST">
-                            <input type="hidden" name="nroDiente" value="21">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 195px; top:679px; border-radius: 150px 150px 150px 150px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/premolarderecho2.png"
-                                    style="height: 23px; width:30px;">
-                            </button>
-                        </form>
-                        <form action="/treatments/tooth/20" method="POST">
-                            <input type="hidden" name="nroDiente" value="20">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 181px; top:659px; border-radius: 60px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/premolarderecho1.png"
-                                    style="height: 23px; width:30px;">
-                            </button>
-                        </form>
-                        {{!-- Molares derechos --}}
-                        <form action="/treatments/tooth/19" method="POST">
-                            <input type="hidden" name="nroDiente" value="19">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 170px; top:629px; border-radius: 60px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarderecho1.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        <form action="/treatments/tooth/18" method="POST">
-                            <input type="hidden" name="nroDiente" value="18">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 163px; top:595px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarderecho2.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
-                        {{!--Diente 17--}}
-                        <form action="/treatments/tooth/17" method="POST">
-                            <input type="hidden" name="nroDiente" value="17">
-                            <button class="boton" type="submit"
-                                style="position: fixed; right: 158px; top:560px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                                <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarderecho3.png"
-                                    style="height: 30px; width:35px;">
-                            </button>
-                        </form>
+                    {{!-- <img class="img-fluid" src="/img/boca.png" alt="boca" style="position: absolute; right: 100px; top:200px; width:15%">  --}}
+                        <div>
+                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/paladararriba3.png" style="position: absolute; right: 110px; top:199px; width: 250px">
+                            <img class="img-fluid" src="/img/teeths/Dientes de abajo/paladarinferior3.png" style="position: absolute; right: 110px; top:435px; width: 250px;">
+                            
+                            {{!-- Dientes de arriba --}}
+                            <div class="container">
+                                {{!-- Dientes de arriba lado izquierdo --}}
+                                {{!-- Molares izquierdos--}}
+                                {{!--Diente 1--}}
+                                <form action="/treatments/tooth/1" method="POST">
+                                    <input type="hidden" name="nroDiente" value="1">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 310px; top:353px; border-radius: 60px;  background-color: transparent; border-radius:10px; border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/molarizq3.png"
+                                            style="height: 30px; width:35px;">
+                                    </button>
+                                </form>
+                                {{!-- Diente 2 --}}
+                                <form action="/treatments/tooth/2" method="POST">
+                                    <input type="hidden" name="nroDiente" value="2">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 305px; top:318px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/molarizq2.png"
+                                            style="height: 30px; width:35px;">
+                                    </button>
+                                </form>
+                                {{!--Diente 3--}}
+                                <form action="/treatments/tooth/3" method="POST">
+                                    <input type="hidden" name="nroDiente" value="3">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 300px; top:286px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/molarizq1.png"
+                                            style="height: 30px; width:35px;">
+                                    </button>
+                                </form>
+                                {{!-- Premolares izquierdos--}}
+                                {{!--Diente 4--}}
+                                <form action="/treatments/tooth/4" method="POST">
+                                    <input type="hidden" name="nroDiente" value="4">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 290px; top:260px; border-radius: 150px 150px 150px 150px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolar2.png"
+                                            style="height: 23px; width:30px;">
+                                    </button>
+                                </form>
+                                {{!--Diente 5--}}
+                                <form action="/treatments/tooth/5" method="POST">
+                                    <input type="hidden" name="nroDiente" value="5">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 280px; top:235px; border-radius: 100px 150px 150px 150px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolarizq1.png"
+                                            style="height: 23px; width:30px;">
+                                    </button>
+                                </form>
+                                {{!-- Canino izquierdo --}}
+                                <form action="/treatments/tooth/6" method="POST">
+                                    <input type="hidden" name="nroDiente" value="6">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 270px; top:220px; border-radius: 250px 500px 150px 200px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/caninoizq.png"
+                                            style="height: 23px; width:20px;">
+                                    </button>
+                                </form>
+                                {{!-- Incisivo lateral izquierdo --}}
+                                <form action="/treatments/tooth/7" method="POST">
+                                    <input type="hidden" name="nroDiente" value="7">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 249px; top:212px; border-radius: 250px 250px 250px 500px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivolateralizq.png"
+                                            style="height: 20px; width:25px;">
+                                    </button>
+                                </form>
+                                {{!-- Incisivo central izquierdo --}}
+                                <form action="/treatments/tooth/8" method="POST">
+                                    <input type="hidden" name="nroDiente" value="8">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 229px; top:208px; border-radius: 250px 250px 250px 500px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivocentralizquierdo.png"
+                                            style="height: 20px; width:25px;">
+                                    </button>
+                                </form>
 
 
-                    </div>
+                                {{!-- Dientes de arriba lado derecho --}}
+                                {{!-- Incisivo central derecho --}}
+                                <form action="/treatments/tooth/9" method="POST">
+                                    <input type="hidden" name="nroDiente" value="9">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 204px; top:208px; border-radius: 250px 250px 250px 500px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivocentralderecho.png"
+                                            style="height: 20px; width:28px;">
+                                    </button>
+                                </form>
+                                {{!-- Incisivo lateral derecho --}}
+                                <form action="/treatments/tooth/10" method="POST">
+                                    <input type="hidden" name="nroDiente" value="10">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 184px; top:215px; border-radius: 500px 500px 500px 250px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivolateralder.png"
+                                            style="height: 20px; width:25px;">
+                                    </button>
+                                </form>
+                                {{!-- Canino derecho --}}
+                                <form action="/treatments/tooth/11" method="POST">
+                                    <input type="hidden" name="nroDiente" value="11">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 169px; top:225px; border-radius: 500px 200px 250px 200px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/caninoder.png"
+                                            style="height: 20px; width:25px;">
+                                    </button>
+                                </form>
+                                {{!-- Premolares derechos --}}
+                                <form action="/treatments/tooth/12" method="POST">
+                                    <input type="hidden" name="nroDiente" value="12">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 155px; top:235px; border-radius: 500px 200px 250px 200px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolarder1.png"
+                                            style="height: 20px; width:28px;">
+                                    </button>
+                                </form>
+                                <form action="/treatments/tooth/13" method="POST">
+                                    <input type="hidden" name="nroDiente" value="13">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 145px; top:255px; border-radius: 150px 150px 150px 150px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolarder2.png"
+                                            style="height: 23px; width:28px;">
+                                    </button>
+                                </form>
+                                {{!-- Molares derechos --}}
+                                <form action="/treatments/tooth/14" method="POST">
+                                    <input type="hidden" name="nroDiente" value="14">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 130px; top:285px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar1der.png"
+                                            style="height: 30px; width:35px;">
+                                    </button>
+                                </form>
+                                <form action="/treatments/tooth/15" method="POST">
+                                    <input type="hidden" name="nroDiente" value="15">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 123px; top:318px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar2der.png"
+                                            style="height: 30px; width:35px;">
+                                    </button>
+                                </form>
+                                {{!--Diente 16--}}
+                                <form action="/treatments/tooth/16" method="POST">
+                                    <input type="hidden" name="nroDiente" value="16">
+                                    <button class="boton" type="submit"
+                                        style="position: absolute; right: 118px; top:352px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                        <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar3der.png"
+                                            style="height: 30px; width:35px;">
+                                    </button>
+                                </form>
+                            </div>    
 
+                            {{!-- Dientes de abajo--}}
+                            <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div>
+                                                {{!-- Dientes de abajo --}}
+                                                {{!-- Molares izquierdos --}}
+                                                {{!--Diente 32--}}
+                                                <form action="/treatments/tooth/32" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="32">
+                                                    <button type="submit" class="boton"
+                                                        style="position: absolute; right: 318px; top:472px; background-color: transparent; border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarizquierdo3.png"
+                                                            style="height: 30px; width:35px;">
+                                                    </button>
+                                                </form>
+                                                {{!--Diente 31--}}
+                                                <form action="/treatments/tooth/31" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="31">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 315px; top:505px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarizquierdo2.png"
+                                                            style="height: 30px; width:35px;">
+                                                    </button>
+                                                </form>
+                                                <form action="/treatments/tooth/30" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="30">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 308px; top:539px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarizquierdo1.png"
+                                                            style="height: 30px; width:35px;">
+                                                    </button>
+                                                </form>
+                                                {{!-- Premolares izquierdos --}}
+                                                <form action="/treatments/tooth/29" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="29">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 300px; top:569px; border-radius: 100px 60px 150px 60px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/premolarizquierdo2.png"
+                                                            style="height: 23px; width:30px;">
+                                                    </button>
+                                                </form>
+                                                <form action="/treatments/tooth/28" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="28">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 289px; top:590px; border-radius: 200px 60px 150px 60px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/premolarizquierdo1.png"
+                                                            style="height: 23px; width:25px;">
+                                                    </button>
+                                                </form>
+                                                {{!-- Canino izquierdo --}}
+                                                <form action="/treatments/tooth/27" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="27">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 275px; top:600px; border-radius: 200px 60px 150px 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/caninoizquierdo.png"
+                                                            style="height: 23px; width:20px;">
+                                                    </button>
+                                                </form>
+                                                {{!-- Incisivo lateral izquierdo --}}
+                                                <form action="/treatments/tooth/26" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="26">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 260px; top:610px; border-radius: 170px 150px 60px 50px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/incisivolateralizquierdo.png"
+                                                            style="height: 23px; width:20px;">
+                                                    </button>
+                                                </form>
 
-                    {{!-- Dientes de arriba lado derecho --}}
-                    {{!-- Incisivo central derecho --}}
-                    <form action="/treatments/tooth/9" method="POST">
-                        <input type="hidden" name="nroDiente" value="9">
-                        <button class="boton" type="submit"
-                            style="position: fixed; right: 240px; top:287px; border-radius: 250px 250px 250px 500px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivocentralderecho.png"
-                                style="height: 20px; width:28px;">
-                        </button>
-                    </form>
-                    {{!-- Incisivo lateral derecho --}}
-                    <form action="/treatments/tooth/10" method="POST">
-                        <input type="hidden" name="nroDiente" value="10">
-                        <button class="boton" type="submit"
-                            style="position: fixed; right: 220px; top:295px; border-radius: 500px 500px 500px 250px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/incisivolateralder.png"
-                                style="height: 20px; width:25px;">
-                        </button>
-                    </form>
-                    {{!-- Canino derecho --}}
-                    <form action="/treatments/tooth/11" method="POST">
-                        <input type="hidden" name="nroDiente" value="11">
-                        <button class="boton" type="submit"
-                            style="position: fixed; right: 203px; top:305px; border-radius: 500px 200px 250px 200px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/caninoder.png"
-                                style="height: 20px; width:25px;">
-                        </button>
-                    </form>
-                    {{!-- Premolares derechos --}}
-                    <form action="/treatments/tooth/12" method="POST">
-                        <input type="hidden" name="nroDiente" value="12">
-                        <button class="boton" type="submit"
-                            style="position: fixed; right: 190px; top:320px; border-radius: 500px 200px 250px 200px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolarder1.png"
-                                style="height: 20px; width:28px;">
-                        </button>
-                    </form>
-                    <form action="/treatments/tooth/13" method="POST">
-                        <input type="hidden" name="nroDiente" value="13">
-                        <button class="boton" type="submit"
-                            style="position: fixed; right: 180px; top:340px; border-radius: 150px 150px 150px 150px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/premolarder2.png"
-                                style="height: 23px; width:28px;">
-                        </button>
-                    </form>
-                    {{!-- Molares derechos --}}
-                    <form action="/treatments/tooth/14" method="POST">
-                        <input type="hidden" name="nroDiente" value="14">
-                        <button class="boton" type="submit"
-                            style="position: fixed; right: 165px; top:368px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar1der.png"
-                                style="height: 30px; width:35px;">
-                        </button>
-                    </form>
-                    <form action="/treatments/tooth/15" method="POST">
-                        <input type="hidden" name="nroDiente" value="15">
-                        <button class="boton" type="submit"
-                            style="position: fixed; right: 160px; top:400px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar2der.png"
-                                style="height: 30px; width:35px;">
-                        </button>
-                    </form>
-                    {{!--Diente 16--}}
-                    <form action="/treatments/tooth/16" method="POST">
-                        <input type="hidden" name="nroDiente" value="16">
-                        <button class="boton" type="submit"
-                            style="position: fixed; right: 155px; top:433px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
-                            <img class="img-fluid" src="/img/teeths/Dientes de arriba/molar3der.png"
-                                style="height: 30px; width:35px;">
-                        </button>
-                    </form>
-                </div>         
-
-                    
-                </div>
-
+                                                {{!-- Incisivo central izquierdo --}}
+                                                <form action="/treatments/tooth/25" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="25">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 245px; top:615px; border-radius: 170px 150px 60px 50px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/incisivocentralizquierdo.png"
+                                                            style="height: 23px; width:15px;">
+                                                    </button>
+                                                </form>
+                                                {{!-- Incisivo central derecho --}}
+                                                <form action="/treatments/tooth/24" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="24">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 225px; top:615px; border-radius: 50px 100px 10px 10px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/incisivocentralderecho.png"
+                                                            style="height: 23px; width:15px;">
+                                                    </button>
+                                                </form>
+                                                {{!-- Incisivo lateral derecho --}}
+                                                <form action="/treatments/tooth/23" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="23">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 198px; top:615px; border-radius: 50px 100px 10px 100px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/incisivolateralderecho.png"
+                                                            style="height: 23px; width:25px;">
+                                                    </button>
+                                                </form>
+                                                {{!-- Canino derecho --}}
+                                                <form action="/treatments/tooth/22" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="22">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 180px; top:607px; border-radius: 50px 100px 10px 100px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/caninoderecho.png"
+                                                            style="height: 23px; width:25px;">
+                                                    </button>
+                                                </form>
+                                                {{!-- Premolares derechos --}}
+                                                <form action="/treatments/tooth/21" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="21">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 163px; top:592px; border-radius: 150px 150px 150px 150px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/premolarderecho2.png"
+                                                            style="height: 23px; width:30px;">
+                                                    </button>
+                                                </form>
+                                                <form action="/treatments/tooth/20" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="20">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 150px; top:570px; border-radius: 60px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/premolarderecho1.png"
+                                                            style="height: 23px; width:30px;">
+                                                    </button>
+                                                </form>
+                                                {{!-- Molares derechos --}}
+                                                <form action="/treatments/tooth/19" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="19">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 137px; top:540px; border-radius: 60px;  background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarderecho1.png"
+                                                            style="height: 30px; width:35px;">
+                                                    </button>
+                                                </form>
+                                                <form action="/treatments/tooth/18" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="18">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 130px; top:507px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarderecho2.png"style="height: 30px; width:35px;">
+                                                    </button>
+                                                </form>
+                                                {{!--Diente 17--}}
+                                                <form action="/treatments/tooth/17" method="POST">
+                                                    <input type="hidden" name="nroDiente" value="17">
+                                                    <button class="boton" type="submit"
+                                                        style="position: absolute; right: 125px; top:475px; border-radius: 60px; background-color: transparent; border-radius:10px;border:rgba(0, 0, 0, 0);">
+                                                        <img class="img-fluid" src="/img/teeths/Dientes de abajo/molarderecho3.png"
+                                                            style="height: 30px; width:35px;">
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>         
+                                    </div>
+                            </div>
+                        </div>
             </div>
-        </div>
     </div>
+</div>   
