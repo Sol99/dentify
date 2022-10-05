@@ -1,40 +1,23 @@
+<h1 class="fs-2 text-center border-color">Historias Clinicas</h1>
 <div class="container">
-    <table class="table" style="background-color: white">
-  <thead>
-    <tr>
-      <th scope="col">Paciente</th>
-      <th scope="col">DNI</th>
-      <th scope="col">Odontologo</th>
-      <th scope="col">Historia Clinica</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Jose Perez</th>
-      <td>45255144</td>
-      <td>Jose Hernandez</td>
-      <td>Ver</td>
-    </tr>
-    <tr>
-      <th scope="row">Julian Perez</th>
-      <td>333332455</td>
-      <td>Pedro Hernandez</td>
-      <td>Ver</td>
-    </tr>
-    <tr>
-      <th scope="row">Marcelo Perez</th>
-      <td>434556144</td>
-      <td>Pedro Hernandez</td>
-      <td>Ver</td>
-    </tr>
-    {{#each usersdatas}}
-    <tr>
-      <th scope="row">{{nombre}} {{apellido}}</th>
-      <td>{{dni}}</td>
-      <td>Ivan Guasch Vives</td>
-      <td><a href="/users/historias-clinicas/{{_id}}">Ver</a></td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+  <table class="table table-striped table-light table-hover mt-5" style="background-color: white">
+    <thead>
+      <tr>
+        <th scope="col">Paciente</th>
+        <th scope="col">DNI</th>
+        <th scope="col">Odontologo</th>
+        <th class="text-center" scope="col">Historia Clinica</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each usersdatas}}
+      <tr>
+        <th scope="row">{{nombre}} {{apellido}}</th>
+        <td>{{dni}}</td>
+        <td>Ivan Guasch Vives</td>
+        <td class="text-center"><a class="btn btn-outline-success btn-sm" href="/users/historias-clinicas/{{_id}}">Ver</a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>
