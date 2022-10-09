@@ -180,14 +180,6 @@ body {
   border-radius: 10px;
  }
 
- .border-style{
-  background: linear-gradient(90deg, rgb(46, 75, 90) 0%, rgb(153, 180, 180) 35%, rgb(253, 252, 252) 100%);
-  width: 100%;
-  box-shadow: 4px 2px 10px #666;
-  font-family: 'Roboto Condensed', sans-serif;
-  margin: 0px 0px 20px 0px;
- 
- }
 
  /* From uiverse.io */
 .button-card {
@@ -242,3 +234,49 @@ body {
 /* .border-login{
   border: 30px solid #265D73;
 } */
+
+
+.style-text{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+}
+
+
+.titulo{
+  margin-left: 60px;
+  margin-top: 2.5em;
+  font-size: 2.5em;
+}
+
+.parrafo{
+font-size: 1.4em;
+margin-right: 0.2em;
+margin-left: 60px;
+
+}
+
+.segundo-parrafo{
+margin-top: 44px;
+font-size: 1.3em;
+font-weight:200;
+margin-left: 60px;
+
+}
+
+.border-style{
+  background-color: #265D73;
+  box-shadow: 4px 2px 10px #666;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgb(252, 252, 252);
+  margin: 0px 0px 20px 0px;
+  padding: 20px;
+}
+
+.style-paragraph{
+  margin-top: 10px;
+  font-size: 1.3em;
+  font-weight:200;
+  margin-left: 60px;
+}
+
+ 
