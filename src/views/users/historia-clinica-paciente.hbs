@@ -54,7 +54,7 @@
                 <li>
                    localidad: {{historia_clinica_paciente.localidad}}
                 </li>
-                
+
             </ul>
         </div>
     </div>
@@ -62,6 +62,9 @@
     <form>
         <input class="d-print-none btn btn-light btn-sm" type="button" name="imprimir" value="Imprimir" onclick="window.print();">   
     </form>
+
+    <a href="/users/historias-clinicas/{{historia_clinica_paciente.dni}}/treatments">Ver Tratamientos</a>
+    
 
 {{!-- Esto es lo que se ve al momento de imprimir --}}
     <div class="d-block d-sm-none">
