@@ -113,9 +113,11 @@ router.get('/users/historias-clinicas/:id',isAuthenticated, async (req,res) =>{
 router.get('/users/historias-clinicas/:dni/treatments',isAuthenticated, async (req,res) =>{
    
     let dniArray = [req.params.dni];
+    console.log("=========POR ESTO BUSCA: " + req.params.dni.toString());
     const dniPacienteSeleccionado = await User.find({dni: req.params.dni.toString()}).lean();
     console.log("El array en la posicion cero es: " + dniArray[0]);
     console.log("El paciente es: " + typeof(dniPacienteSeleccionado));
+    console.log("ACA Los datos del paciente seleccionado son: " + JSON.stringify(dniPacienteSeleccionado));
     const treatments = await Treatment.find({paciente: dniArray}).lean();
     console.log("ACA SE MUESTRAN LOS DATOS DEL PACIENTE SELECCIONADO");
     console.log(treatments);
