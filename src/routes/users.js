@@ -100,11 +100,14 @@ router.get('/users/historias-clinicas', isAuthenticated, async (req,res) =>{
 });
 
 router.get('/users/historias-clinicas/:id',isAuthenticated, async (req,res) =>{
-    const historia_clinica_paciente = await User.findById({_id: req.params.id}).lean();
+    var historia_clinica_paciente = await User.findById({_id: req.params.id}).lean();
+    dniArray = new Array;
+    dniArray.push(historia_clinica_paciente.dni.toString());
+    var treatments = await Treatment.find({paciente: dniArray}).lean();
     console.log("ACA SE MUESTRAN LOS DATOS DEL PACIENTE SELECCIONADO");
     console.log(historia_clinica_paciente);
     console.log("Fin de mostrado");
-    res.render('users/historia-clinica-paciente', { historia_clinica_paciente });
+    res.render('users/historia-clinica-paciente', { historia_clinica_paciente, treatments });
 });
 
 router.get('/users/historias-clinicas/:dni/treatments',isAuthenticated, async (req,res) =>{
