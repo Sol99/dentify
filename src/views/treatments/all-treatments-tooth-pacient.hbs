@@ -1,6 +1,9 @@
 <div>
     <div class="row">
         <h1 class="fs-2 text-center border-color ">Tratamientos</h1>
+        {{#each dniPacienteSeleccionado}}
+        <a href="/users/historias-clinicas/{{dni}}/treatments/"> VOLVER </a>
+        {{/each}}
         <div class="d-flex align-items-center">
             <div class="table-responsive col-9 ">
                 <table class="table table-striped table-light table-hover mt-5" id="label">
@@ -132,11 +135,11 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group mt-4">
+                                    <div style="display: none;" class="form-group mt-4">
                                         <label for="paciente" class="form-label fw-bold"> Paciente</label>
                                         <select class="form-select" id="paciente" name="paciente">
-                                            {{#each pacientes}}
-                                            <option>{{dni}}, {{nombre}} {{apellido}}</option>
+                                            {{#each dniPacienteSeleccionado}}
+                                            <option selected>{{dni}}</option>
                                             {{/each}}
                                         </select>
                                     </div>

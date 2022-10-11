@@ -58,7 +58,7 @@ router.post('/treatments/new-treatment', isAuthenticated, async (req,res) =>{
 //metodo alterado pasa historias clinicas
 router.post('/treatments/new-treatment-clinical-histories', isAuthenticated, async (req,res) =>{
     var { nombre,fecha,caraDiente,nroDiente,matriculaOdontologo,paciente,observaciones}= req.body;
-    var dnipaciente = paciente.split(',').at(0);
+    var dnipaciente = paciente;
     //console.log("DESDE EL BACK EL NRODIENTE ES: " + nroDiente);
     const errors = [];
     if (!nombre) {
@@ -94,7 +94,7 @@ router.post('/treatments/new-treatment-clinical-histories', isAuthenticated, asy
         
     } else {
 
-        var resul = paciente.split(',').at(0);
+        var resul = paciente;
         paciente = resul;
         const datosJson = JSON.parse(JSON.stringify(treatmentsJson));
         let obtenerCodigo = datosJson.find( (item) => (item.Nombre == nombre ));
