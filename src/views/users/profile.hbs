@@ -1,12 +1,15 @@
 <div class="container">
     {{#each userdata}}
     <div class="col">
-        <div class="panel-heading styles-info mt-5 text-white">
-            <h3 class="panel-title fs-4 ms-2">Mi perfil</h3>
+        <div class="panel-heading styles-info mt-2 text-white col-md-8 mx-auto p-1 mb-1">
+            <h3 class="panel-title fs-4 ms-2 ">Mi perfil</h3>
         </div>
-        <div class="card" style="margin-top: 1%;">
-            <div class="card-body modal-styles">
-                <h4 class="card-title d-flex justify-content-left align-items-center">
+        <div class="card history-styles col-md-8 mx-auto p-4 mb-5" style="margin-top: 1%;">
+            <div class="d-flex justify-content-center mt-3 mb-3">
+                 <img src="/img/perfil-PhotoRoom.png" width="180">
+            </div>
+            {{!-- <div class="card-body modal-styles"> --}}
+            {{!-- <h4 class="card-title d-flex justify-content-left align-items-center">
                     <strong>Nombre: &nbsp;</strong>
                     <p></p>
                     {{nombre}}
@@ -33,16 +36,56 @@
                 </h4>
             </div>
         </div>
-    </div>
+    </div> --}}
+            <ol class="list-group">
+                <li class="list-group-item styles-list d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <span class="fs-5">Nombre: &nbsp;</span>
+                        <p></p>
+                        {{nombre}}
+                    </div>
+                </li>
+                <li class="list-group-item styles-list d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <span class="fs-5">Apellido: &nbsp;</span>
+                        <p></p>
+                        {{apellido}}
+                    </div>
+                </li>
+                <li class="list-group-item styles-list d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <span class="fs-5">Email: &nbsp;</span>
+                        <p></p>
+                        {{email}}
+                    </div>
+                </li>
+                      <li class="list-group-item styles-list d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                    <span class="fs-5">Teléfono: &nbsp;</span>
+                    <p></p>
+                    {{telefono}}
+                    </div>
+                </li>
+                <li class="list-group-item styles-list d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                    <span class="fs-5">Rol: &nbsp;</span>
+                    <p></p>
+                    {{rol}}
+                    </div>
+                </li>
+            </ol>
 
-    {{else}}
-    <div class="card mx-auto">
-        <div class="card-body">
-            <h1>Error al obtener datos del usuario</h1>
 
+
+
+            {{else}}
+            <div class="card mx-auto">
+                <div class="card-body">
+                    <h1>Error al obtener datos del usuario</h1>
+
+                </div>
+            </div>
+
+
+            {{/each}}
         </div>
-    </div>
-
-
-    {{/each}}
-</div>
