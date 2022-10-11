@@ -1,39 +1,47 @@
 <div class="container">
     {{#each userdata}}
-        <div class="col">
-            <div class="card" style="margin-top: 3%;">
-                <div class="card-body">
-                    <h4 class="card-title d-flex justify-content-left align-items-center">
-                        <strong>Nombre: &nbsp;</strong> <p></p>
-                       {{nombre}}
-                    </h4>
-                   <h4 class="card-title d-flex justify-content-left align-items-center">
-                        <strong>Apellido: &nbsp;</strong> <p></p>
-                       {{apellido}}
-                    </h4>             
-                    <h4 class="card-title d-flex justify-content-left align-items-center">
-                        <strong>email: &nbsp;</strong> <p></p>
-                       {{email}}
-                    </h4>
-                    <h4 class="card-title d-flex justify-content-left align-items-center">
-                        <strong>Teléfono: &nbsp;</strong> <p></p>
-                       {{telefono}}
-                    </h4>
-                    <h4 class="card-title d-flex justify-content-left align-items-center">
-                        <strong>Rol: &nbsp;</strong> <p></p>
-                       {{rol}}
-                    </h4>
-                </div>
+    <div class="col">
+        <div class="panel-heading styles-info mt-5 text-white">
+            <h3 class="panel-title fs-4 ms-2">Mi perfil</h3>
+        </div>
+        <div class="card" style="margin-top: 1%;">
+            <div class="card-body modal-styles">
+                <h4 class="card-title d-flex justify-content-left align-items-center">
+                    <strong>Nombre: &nbsp;</strong>
+                    <p></p>
+                    {{nombre}}
+                </h4>
+                <h4 class="card-title d-flex justify-content-left align-items-center">
+                    <strong>Apellido: &nbsp;</strong>
+                    <p></p>
+                    {{apellido}}
+                </h4>
+                <h4 class="card-title d-flex justify-content-left align-items-center">
+                    <strong>email: &nbsp;</strong>
+                    <p></p>
+                    {{email}}
+                </h4>
+                <h4 class="card-title d-flex justify-content-left align-items-center">
+                    <strong>Teléfono: &nbsp;</strong>
+                    <p></p>
+                    {{telefono}}
+                </h4>
+                <h4 class="card-title d-flex justify-content-left align-items-center">
+                    <strong>Rol: &nbsp;</strong>
+                    <p></p>
+                    {{rol}}
+                </h4>
             </div>
         </div>
+    </div>
 
-        {{else}}
-        <div class="card mx-auto">
-            <div class="card-body">
-                <h1>Error al obtener datos del usuario</h1>
-                
-            </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <h1>Error al obtener datos del usuario</h1>
+
         </div>
+    </div>
 
 
     {{/each}}

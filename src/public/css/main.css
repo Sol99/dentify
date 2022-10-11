@@ -331,3 +331,15 @@ margin-left: 60px;
   transform: scale(0.95);
   transition: 0.1s;
  }
+
+ .styles-info {
+  background: linear-gradient(90deg, #2c5f74 0%, #406f83 35%, #568193 100%);
+  border-radius: 5px;
+
+ }
+
+ .styles-clinic-history {
+  background: linear-gradient(90deg, rgb(197, 212, 219) 0%, rgb(227, 239, 239) 35%, rgb(212, 211, 211) 100%);
+  border-radius: 5px;
+ }
+ 
