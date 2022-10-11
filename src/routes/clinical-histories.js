@@ -8,7 +8,7 @@ const treatmentsJson = require('../views/treatments/treatments.json');
 router.post('/users/historias-clinicas/search', isAuthenticated, async (req,res)=>{
     var {dniPaciente} = req.body;
     var usersdatas;
-    console.log((dniPaciente));
+    console.log("El dni buscado es.."+dniPaciente);
     //var usersdatas = await User.find({esOdontologo: false}).lean();
     if (dniPaciente != ""){   
         usersdatas = await User.find({dni: { "$regex": dniPaciente, "$options": "i" }}).lean();

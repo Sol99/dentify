@@ -1,34 +1,39 @@
-<div class="container">
-
- <form action="/users/historias-clinicas/search" method="POST">
-    <div class="input-group" style="margin-bottom: 3%;">
-      <input type="Number" class="form-control" placeholder="Ingrese DNI del paciente..." name="dniPaciente">
-      <span class="input-group-btn" style="padding-left: 1%;">
-        <button class="btn btn-success" type="submit">Buscar</button>
-      </span>
+<div class="row d-flex justify-content-md-center">
+  <h1 class="fs-2 text-center border-color">
+    Historias Clinicas
+  </h1>
+  <div class="mt-5 col-8">
+    <form action="/users/historias-clinicas/search" method="POST">
+      <div class="d-flex justify-content-end p-2">
+        <div class="me-2">
+            <input type="text" class="form-control" placeholder="Ingrese el DNI" name="dniPaciente">
+        </div>
+        <button class="button-search" type="submit">
+          Buscar
+        </button>
+      </div>
+    </form>
+    <div class="table-responsive">
+      <table class="table table-striped table-light table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Paciente</th>
+            <th scope="col">DNI</th>
+            <th scope="col">Odontólogo</th>
+            <th scope="col">Historia Clínica</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each usersdatas}}
+          <tr>
+            <th scope="row">{{nombre}} {{apellido}}</th>
+            <td>{{dni}}</td>
+            <td>Ivan Guasch Vives</td>
+            <td><a class="btn btn-outline-success button1 btn-sm p-2" href="/users/historias-clinicas/{{_id}}">Ver</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
- </form>
-
-  <table class="table" style="background-color: white">
-    <thead>
-      <tr>
-        <th scope="col">Paciente</th>
-        <th scope="col">DNI</th>
-        <th scope="col">Odontologo</th>
-        <th scope="col">Historia Clinica</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each usersdatas}}
-      <tr>
-        <th scope="row">{{nombre}} {{apellido}}</th>
-        <td>{{dni}}</td>
-        <td>Ivan Guasch Vives</td>
-        <td><a href="/users/historias-clinicas/{{_id}}">Ver</a></td>
-      </tr>
-      {{/each}}
-
-      
-    </tbody>
-</table>
+  </div>
 </div>

@@ -171,6 +171,182 @@ body {
    object-fit: cover;
 }
 
+.card:hover {
+  margin-top: -20px;
+ }
+ 
+ .style-card {
+  background: linear-gradient(90deg, rgb(233, 237, 239) 0%, rgb(235, 240, 240) 35%, rgb(235, 233, 233) 100%);
+  border-radius: 10px;
+ }
+
+
+ /* From uiverse.io */
+.button-card {
+  --color: #265D73;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  text-decoration: none;
+ }
+ 
+ .button-card:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+ }
+ 
+ .button-card:hover {
+  color: #fff;
+ }
+ 
+ .button-card:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+ 
+ .button-card:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ 
+ .button-card:active:before {
+  background: #265D73;
+  transition: background 0s;
+ }
 /* .border-login{
   border: 30px solid #265D73;
 } */
+
+
+.style-text{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+}
+
+
+.titulo{
+  margin-left: 60px;
+  margin-top: 2.5em;
+  font-size: 2.5em;
+}
+
+.parrafo{
+font-size: 1.4em;
+margin-right: 0.2em;
+margin-left: 60px;
+
+}
+
+.segundo-parrafo{
+margin-top: 44px;
+font-size: 1.3em;
+font-weight:200;
+margin-left: 60px;
+
+}
+
+.border-style{
+  background-color: #265D73;
+  box-shadow: 4px 2px 10px #666;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgb(252, 252, 252);
+  margin: 0px 0px 20px 0px;
+  padding: 20px;
+}
+
+.style-paragraph{
+  margin-top: 10px;
+  font-size: 1.3em;
+  font-weight:200;
+  margin-left: 60px;
+}
+
+.style-footer {
+  background-color: #265D73;
+  box-shadow: 4px 2px 10px #666;
+
+}
+
+.button-search {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #408EA0;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  transition: all 0.5s;
+  cursor: pointer;
+ }
+ 
+
+ 
+ button-search:hover span {
+  padding-right: 15px;
+ }
+ 
+ button-search:hover span:after {
+  opacity: 1;
+  right: 0;
+ }
+ /* From uiverse.io by @xXJollyHAKERXx */
+.button1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 37px;
+  width: 53px;
+  border: 0px solid;
+  background-image: linear-gradient(45deg,#2c5f74,#77C4D6,#2c5f74);
+  background-size: 500% 400%;
+  color: white;
+  border-radius: 10px;
+  transition: 0.6s all;
+ }
+ 
+ .button1:hover {
+  background-position: 75% 50%;
+  transform: perspective(100px)
+ }
+ 
+ .button1:active {
+  transform: scale(0.95);
+  transition: 0.1s;
+ }
+
+ .styles-info {
+  background: linear-gradient(90deg, #2c5f74 0%, #406f83 35%, #568193 100%);
+  border-radius: 5px;
+
+ }
+
+ .styles-clinic-history {
+  background: linear-gradient(90deg, rgb(197, 212, 219) 0%, rgb(227, 239, 239) 35%, rgb(212, 211, 211) 100%);
+  border-radius: 5px;
+ }
+ 
+ .history-styles{
+  background: linear-gradient(90deg, rgb(225, 226, 227) 0%, rgb(227, 225, 225) 35%, rgb(230, 227, 227) 100%);
+ }
+
+ .styles-list{
+  background: linear-gradient(90deg, rgb(237, 239, 240) 0%, rgb(248, 246, 246) 35%, rgb(245, 240, 240) 100%);
+ }

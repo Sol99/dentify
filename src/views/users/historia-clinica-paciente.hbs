@@ -1,77 +1,77 @@
+<h1 class="fs-2 text-center border-color">
+  Historia Clínica
+</h1>
 <div class="container">
-    <div class="panel panel-primary d-print-none" style="background-color: White;">
-        <div class="panel-heading" style="background-color: orange;">
-            <h3 class="panel-title">Información General</h3>
+    <div class="panel panel-primary d-print-none">
+        <div class="panel-heading styles-info mt-5 text-white">
+            <h3 class="panel-title fs-4 ms-2">Información General</h3>
         </div>
         <div class="panel-body">
             <ul id="listado">
                 
-                <li id="nombre">
+                <li id="nombre" class="list-group-item history-styles">
                     Apellido: {{historia_clinica_paciente.apellido}}
                 </li>
                 
-                <li>
+                <li class="list-group-item history-styles">
                    Nombre: {{historia_clinica_paciente.nombre}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                     Numero de Afiliado: {{historia_clinica_paciente.numeroAfiliado}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                    Fecha de nacimiento: {{historia_clinica_paciente.fechaCumpleanios}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                    e-mail: {{historia_clinica_paciente.email}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                    Nro telefono: {{historia_clinica_paciente.telefono}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                    Obra Social: {{historia_clinica_paciente.obraSocial}}
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="panel panel-primary d-print-none" style="background-color: White;">
-        <div class="panel-heading" style="background-color: orange;">
-            <h3 class="panel-title">Datos de Domicilio</h3>
+    <div class="panel panel-primary d-print-none">
+        <div class="panel-heading styles-info" >
+            <h3 class="panel-title text-white fs-4 ms-2">Datos de Domicilio</h3>
         </div>
-        <div class="panel-body" >
+        <div>
             <ul>
                 
-                <li>
+                <li class="list-group-item history-styles">
                     Calle: {{historia_clinica_paciente.calle}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                    Numero: {{historia_clinica_paciente.numeroCalle}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                     Piso: {{historia_clinica_paciente.piso}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                   Depto:  {{historia_clinica_paciente.departamento}}
                 </li>
-                <li>
+                <li class="list-group-item history-styles">
                    localidad: {{historia_clinica_paciente.localidad}}
                 </li>
 
             </ul>
         </div>
     </div>
+  <div class="d-flex justify-content-end">
+  <form>
+    <svg class="d-print-none btn btn-sm btn" width="50" height="50" name="imprimir" value="Imprimir" onclick="window.print();" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg>
+  </form>
 
-    <form>
-        <input class="d-print-none btn btn-light btn-sm" type="button" name="imprimir" value="Imprimir" onclick="window.print();">   
-    </form>
-
-    <a class="d-print-none" href="/users/historias-clinicas/{{historia_clinica_paciente.dni}}/treatments">Ver Tratamientos</a>
-    
-
+    <a class="d-print-none mt-2" href="/users/historias-clinicas/{{historia_clinica_paciente.dni}}/treatments">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+    </a>
+</div>
 {{!-- Esto es lo que se ve al momento de imprimir --}}
     <div class="d-block d-sm-none">
-
-        <p class="h1 text-center">Historia Clinica</p>
-
-
     <table class="table table-sm d-sm-none">
     <thead>
         <tr>
