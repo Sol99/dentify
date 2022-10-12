@@ -10,19 +10,19 @@
     <div>
         <h1 class="display-4 fs-2 text-center border-color">¡Bienvenido a Dentify!</h1>
     </div>
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="/img/fondo3.jpg" class="d-block w-100" alt="...">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/fondo3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/fondo3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/fondo3.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="/img/fondo3.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="/img/fondo3.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-</div>
     <div style="text-align: center;">
         <h2 class=" my-4" style="text-align: center;"> </h2>
         <div class="row container-fluid" style="justify-content: center;">
@@ -64,27 +64,53 @@
     <div class="d-flex justify-space-between col-12 mt-5">
         <img class="mb-5" src="/img/especialidades-odontologia.png" width="600">
         <div>
-            <h2 class="titulo">Conoce Dentify</h2>
-            <p class="style-paragraph"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis consequatur repudiandae doloremque, ipsam aliquid facere alias cum eaque perferendis doloribus quos! Delectus recusandae ab placeat accusantium dignissimos et! Inventore, temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nobis eveniet voluptatibus modi non necessitatibus assumenda quaerat, maxime qui culpa rem quis. Ab doloribus quas consequatur beatae odit iusto est.</p>
+            <h2 class="titulo fs-1">Conoce Dentify</h2>
+            <p class="style-paragraph"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis consequatur
+                repudiandae doloremque, ipsam aliquid facere alias cum eaque perferendis doloribus quos! Delectus
+                recusandae ab placeat accusantium dignissimos et! Inventore, temporibus. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Quos nobis eveniet voluptatibus modi non necessitatibus assumenda quaerat,
+                maxime qui culpa rem quis. Ab doloribus quas consequatur beatae odit iusto est.</p>
         </div>
     </div>
 
 
     {{!-- Datos del odontologo --}}
-    <h1 class="display-4 fs-2 text-center border-style">Nuestro Odontólogo</h1>
-    <h2 class="titulo">Odontólogo Ivan Guasch Vives</h2>
+    <h2 class="ms-5 mt-5 fs-1">Odontólogo Ivan Guasch Vives</h2>
     <div class="d-flex justify-space-between col-12 ">
         <p class="segundo-parrafo"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
             possimus dicta eaque praesentium nihil quod impedit blanditiis ad, aliquid nulla ab autem cupiditate sed
             ratione pariatur voluptate porro numquam fugiat! Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Exercitationem impedit voluptate repellat, officiis voluptatum porro. Corporis, quo alias nihil aliquid
             dicta nisi distinctio nam voluptates saepe, reiciendis adipisci earum tempora.</p>
-        <img src="/img/odontologo.png" width="900">
+        <div class="mb-5">
+            <img src="/img/odontologo.png" width="900">
+        </div>
     </div>
 
     {{!-- Datos del local--}}
-    <h1 class="display-4 fs-2 text-center border-style">Conoce nuestro consultorio</h1>
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <h1 class="fs-2 text-center border-style mt-5">Nuestro consultorio</h1>
+    <div class="d-flex justify-content-around">
+        <div class="card mt-5 style-card" style="width: 30rem;">
+            <img src="/img/consultorio1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="card mt-5 style-card" style="width: 30rem;">
+            <img src="/img/odontologia2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="card mt-5 style-card" style="width: 30rem;">
+            <img src="/img/consultorio-renzulli-12.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+
+    {{!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -126,19 +152,48 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div> 
+    </div> --}}
+
     {{!-- Datos de la ubicacion --}}
-    <h1 class="display-4 fs-2 text-center border-style mt-5">Nos encontramos en Hipólito Irigoyen N° 8419, de la ciudad
-        de Lomas de Zamora, Provincia de Buenos Aires</h1>
+    {{!-- <div>
+        <h1 class="display-4 fs-2 text-center border-style mt-5">Nos encontramos en Hipólito Irigoyen N° 8419, Lomas de Zamora, Provincia de Buenos Aires</h1>
+        <div class="d-flex justify-content-around">
+            <div class="mt-5">
+                <img src="/img/ubicacion-dentify.png" height="400">
+            </div>
+            <div>
+                <iframe class="mt-3"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.080732841854!2d-58.40341688424927!3d-34.753559072949706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd290b9268e3f%3A0x1921ca8cce2572ca!2sAv.%20Hip%C3%B3lito%20Yrigoyen%208419%2C%20B1832BRB%20Lomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1664858080158!5m2!1ses!2sar"
+                    width="900px" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div> --}}
+    <h1 class="display-4 fs-2 text-center border-style mt-5 mb-5">Ubicación del consultorio</h1>
+    <div class="d-flex justify-content-around">
+            <div class="col-md-4">
+        <img class="mt-5" src="/img/ubicacion-dentify.png" height="450" alt="...">
+    </div>
+    <div class="card mb-3" style="max-width: 935px;">
+        <div class="row g-0">
 
-    <div class="jumbotron jumbotron-fluid">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <iframe class="mt-5"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.080732841854!2d-58.40341688424927!3d-34.753559072949706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd290b9268e3f%3A0x1921ca8cce2572ca!2sAv.%20Hip%C3%B3lito%20Yrigoyen%208419%2C%20B1832BRB%20Lomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1664858080158!5m2!1ses!2sar"
+                        width="900px" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <h5 class="card-title">Hipólito Irigoyen N° 8419, Lomas de Zamora, Provincia de Buenos Aires</h5>
+                    <p class="card-text">Áreas de servicio: La Plata y en áreas cercanas</p>
+                    <p class="card-text">Teléfono: 0221 525-8859</p>
+                    <p class="card-text">Provincia: Provincia de Buenos Aires</p>
 
-        <div style="margin: 10px;text-align: left;">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.080732841854!2d-58.40341688424927!3d-34.753559072949706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd290b9268e3f%3A0x1921ca8cce2572ca!2sAv.%20Hip%C3%B3lito%20Yrigoyen%208419%2C%20B1832BRB%20Lomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1664858080158!5m2!1ses!2sar"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+                </div>
+            </div>
         </div>
     </div>
+    </div>
+
 </div>
