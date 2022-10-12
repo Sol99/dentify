@@ -343,9 +343,8 @@ margin-left: 60px;
  }
  
  .history-styles{
-  background: linear-gradient(90deg, rgb(225, 226, 227) 0%, rgb(227, 225, 225) 35%, rgb(230, 227, 227) 100%);
- }
+  background:linear-gradient(90deg, rgb(222, 224, 225) 0%, rgb(227, 225, 225) 35%, rgb(230, 227, 227) 100%) }
 
  .styles-list{
-  background: linear-gradient(90deg, rgb(237, 239, 240) 0%, rgb(248, 246, 246) 35%, rgb(245, 240, 240) 100%);
+  background: linear-gradient(90deg, rgb(224, 230, 232) 0%, rgb(232, 239, 239) 35%, rgb(240, 236, 236) 100%);
  }
