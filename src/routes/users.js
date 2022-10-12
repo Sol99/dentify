@@ -11,7 +11,7 @@ router.get('/users/signin', (req,res) =>{
 });
 
 router.post('/users/signin', passport.authenticate('local', {
-    successRedirect: '/notes',
+    successRedirect: '/about',
     failureRedirect: '/users/signin',
     failureFlash: true,
 }));
@@ -72,7 +72,7 @@ router.post('/users/signup', async (req,res) =>{
 
 router.get('/users/logout', (req,res) =>{
     req.logout();
-    res.redirect('/');
+    res.redirect('/about');
 });
 
 
