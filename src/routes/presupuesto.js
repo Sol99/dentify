@@ -258,15 +258,37 @@ router.put('/presupuestos/edit-presupuesto/:id',isAuthenticated, async (req,res)
 
         for (i in idCantidadesReal){
             console.log("MOSTRAMOS LA LISTA LIMPIA");
-            console.log("EL VALOR ES: " + idCantidades[i] + "y el tipo es: "+typeof(idCantidades[i]));
+            console.log("EL VALOR ES: " + idCantidades[i] + "y el tipo es: "+ typeof(idCantidades[i]));
         }
     
     const errors = [];
-    if(idTratamientos.length != idCantidadesReal.length ){
-        errors.push({text: 'Las cantidades ingresadas no coinciden con las cantidades seleccionadas'});
+
+    if (typeof(idTratamientos) == 'string'){
+
+        if (idCantidadesReal.length != 1 ){
+            console.log("Este arroja1");
+            console.log(idCantidadesReal.length);
+            errors.push({text: 'Las cantidades ingresadas no coinciden con las cantidades seleccionadas'});
+        }
     }
+
+    console.log("t" + idTratamientos.length + "can" + idCantidadesReal.length );
+
+    if (typeof(idTratamientos) != 'string'){
+        if(idTratamientos && idCantidadesReal){
+            if(idTratamientos.length != idCantidadesReal.length ){
+                console.log("Este arroja2");
+                errors.push({text: 'Las cantidades ingresadas no coinciden con las cantidades seleccionadas'});
+            }
+        }
+
+    }
+
     if (!idTratamientos) {
-        errors.push({text: 'Por favor ingrese un nombre'});
+        errors.push({text: 'No se seleccionaron tratamientos'});
+    }
+    if (!idCantidades) {
+        errors.push({text: 'No se seleccionaron tratamientos'});
     }
     if (!fechaVencimiento) {
         errors.push({text: 'Por favor ingrese una fecha'});
@@ -343,11 +365,17 @@ router.put('/presupuestos/edit-presupuesto/:id',isAuthenticated, async (req,res)
         else{
 
 
+                console.log("ENTRA ACA==========");
+
                 let tratamientoencontrado = datosJson.find( (item) => (item.Code == idTratamientos ));
+
     
                 importe = tratamientoencontrado.Valor;
+                console.log("el importe es: " + importe);
 
                 var numero = parseInt(importe.substr(1), 10);
+
+
 
                 numero = numero * idCantidadesReal;
     
