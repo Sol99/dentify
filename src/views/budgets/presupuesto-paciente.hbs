@@ -2,35 +2,37 @@
     <div class="row">
         <h1 class="fs-2 text-center border-color ">Presupuestos</h1>
             <div class="d-flex align-items-center">
-                <div class="table-responsive col-9 ">
+                <div class="table-responsive col-12 ">
                     <table class="table table-striped table-light table-hover mt-5" id="label">
                         <thead>
                             <tr>
-                                <th>Tratamiento</th>
-                                <th>Fecha</th>
-                                <th>Importe</th>
-                                <th>Cara del Diente</th>
-                                <th>Descripcion</th>
-                                <!--{{#if esOdontologo}}
+                                <th>N° Presupuesto</th>
+                                <th>Fecha de Creación</th>
+                                <th>Fecha de Vencimiento</th>
+                                <th>Importe Total</th>
+                                <th>Observaciones</th>
+                                <th>Estado</th>
+                                {{#if esOdontologo}}
                                 <th></th>
-                                {{/if}}-->
+                                {{/if}}
                             </tr>
                         </thead>
                         <tbody>
-                            {{#each treatments}}
+                            {{#each presupuestos}}
                             <tr>
                                 
-                                <td>{{nombre}}</td>
-                                <td>{{importe}}</td>
+                                <td>{{codigo}}</td>
                                 <td>{{fecha}}</td>
-                                <td>{{caraDiente}}</td>
+                                <td>{{fechaVencimiento}}</td>
+                                <td>${{importeTotal}}</td>
                                 <td>{{observaciones}}</td>
+                                <td>Pendiente</td>
                                 
-                                <!--{{#if ../esOdontologo}}
+                                {{#if ../esOdontologo}}
                                 <td>
                                     
                                     <div class="styles-button">
-                                        <form action="/treatments/delete/{{_id}}?_method=DELETE" method="POST">
+                                        <form action="/presupuestos/delete/{{_id}}?_method=DELETE" method="POST">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button class="btn btn-outline-danger btn-sm" type="submit">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="text-dark" width="16" height="25"
@@ -42,11 +44,11 @@
                                                 </svg>
                                             </button>
                                         </form>
-                                    </div>-->
-                                    <!--
-                                    <div class="styles-button">-->
+                                    </div>
+                                    
+                                    <div class="styles-button">
                                         <!--<a href="/treatments/edit/{{_id}}" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"></a>-->
-                                       <!-- <a href="/treatments/edit/{{_id}}" class="btn btn-outline-success btn-sm ">
+                                        <a href="/presupuestos/edit/{{_id}}" class="btn btn-outline-success btn-sm ">
                                             <svg class="text-dark" xmlns="http://www.w3.org/2000/svg" width="16" height="25"
                                                 fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                 <path
@@ -57,7 +59,7 @@
                                         </a>
                                     </div>
                                 </td>
-                                {{/if}}-->
+                                {{/if}}
                             </tr>
                             {{/each}}
                         </tbody>
@@ -65,66 +67,12 @@
                     
                     <!-- Modal Agregar tratamiento -->
                     
-                    <a href="/presupuesto/{{pacienteSeleccionado._id}}/new" class="btn style-button">
-                        Nuevo Presupuesto Link
-                    </a>
-
-                    <button type="button" class="btn style-button" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
+                    {{#if esOdontologo}}
+                    <a href="/presupuesto/{{pacienteSeleccionado._id}}/new" class="btn style-button col-3" style="text-align: center;">
                         Nuevo Presupuesto
-                    </button>
+                    </a>
+                    {{/if}}
                     
-                    <div class="modal fade" id="exampleModalLong" tabindex="-1" aria-labelledby="Title" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content modal-styles">
-                                <div class="col-md-12 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h3>Nuevo Presupuesto</h3>
-                                        </div>
-
-                                        <div class="card-body">
-                                            <form action="" "method=POST">
-                                                <div class="form-group">
-                                                    <textarea name="paciente" class="form-control" placeholder="Paciente" style="margin-top: 3%;"></textarea>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <textarea name="importe" class="form-control" placeholder="importe..." style="margin-top: 3%;"></textarea>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <textarea name="fecha" class="form-control" placeholder="fecha" style="margin-top: 3%;"></textarea>
-                                                </div>         
-
-                                                <div class="form-group">
-                                                    <textarea name="fecha vencimiento" class="form-control" placeholder="fecha de vencimiento" style="margin-top: 3%;"></textarea>
-                                                </div>
-                                                <div class="form-group mt-4">
-                                                        <select name="caraDiente" placeholder="tratamiento">
-                                                            <option >Blanquiamiento</option>
-                                                            <option >Extraccion</option>
-                                                            <option >Limpieza</option>
-                                                            <option >Conducto</option>
-                                                        </select>
-                                                </div> 
-                                                
-                                                <div class="form-group">
-                                                        <textarea name="Descripcion" class="form-control"placeholder="Descripcion..." style="margin-top: 3%;"></textarea>
-                                                </div>
-                                                <div class="form-group" style="float: right;">
-                                                    <button class="btn btn-primary btn-block" type="submit" style="margin-top: 3%;">
-                                                        Guardar
-                                                    </button>
-                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="margin-top: 3%;">
-                                                        Cancelar
-                                                    </button>
-                                                </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

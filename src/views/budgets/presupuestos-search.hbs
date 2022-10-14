@@ -1,9 +1,9 @@
 <div class="row d-flex justify-content-md-center">
   <h1 class="fs-2 text-center border-color">
-    Historias Clinicas
+    Presupuestos
   </h1>
   <div class="mt-5 col-8">
-    <form action="/users/historias-clinicas/search" method="POST">
+    <form action="/presupuestos/search" method="POST">
       <div class="d-flex justify-content-end p-2">
         <div class="me-2">
             <input type="text" class="form-control" placeholder="Ingrese el DNI" name="dniPaciente">
@@ -29,7 +29,7 @@
             <th scope="row">{{nombre}} {{apellido}}</th>
             <td>{{dni}}</td>
             <td>Ivan Guasch Vives</td>
-            <td><a class="btn btn-outline-success button1 btn-sm p-2" href="/users/historias-clinicas/{{_id}}">Ver</a></td>
+            <td><a class="btn btn-outline-success button1 btn-sm p-2" href="/presupuesto/{{_id}}">Ver</a></td>
           </tr>
           {{/each}}
         </tbody>

@@ -6,6 +6,7 @@ const PresupuestoSchema = new Schema ({
     fecha: { type: String},
     fechaVencimiento: { type: String},
     idTratamientos: {type: Array},
+    idCantidades: {type: Array},
     importeTotal: { type: String},
     paciente: {type: String},
     observaciones: {type:String},
