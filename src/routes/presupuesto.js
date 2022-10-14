@@ -81,29 +81,38 @@ router.post('/presupuesto/new-budget', isAuthenticated, async (req,res) =>{
             console.log("EL VALOR ES: " + idCantidades[i] + "y el tipo es: "+typeof(idCantidades[i]));
         }
     
-    const errors = [];
+        const errors = [];
 
-    if (idTratamientos != null || idTratamientos != null){
-        if(idTratamientos.length != idCantidadesReal.length ){
-            errors.push({text: 'Las cantidades ingresadas no coinciden con las cantidades seleccionadas'});
+        if (typeof(idTratamientos) == 'string'){
+    
+            if (idCantidadesReal.length != 1 ){
+                console.log("Este arroja1");
+                console.log(idCantidadesReal.length);
+                errors.push({text: 'Las cantidades ingresadas no coinciden con las cantidades seleccionadas'});
+            }
         }
-    }
-
-    if(idTratamientos == null ){
-        errors.push({text: 'No se seleccionaron tratamientos'});
-    }
-
-    if ( idCantidades == null ){
-        errors.push({text: 'No se seleccionaron cantidades'});
-    }
-        
-
-    /*if (!idTratamientos) {
-        errors.push({text: 'Por favor ingrese un nombre'});
-    }*/
-    if (!fechaVencimiento) {
-        errors.push({text: 'Por favor ingrese una fecha'});
-    }
+    
+        //console.log("t" + idTratamientos.length + "can" + idCantidadesReal.length );
+    
+        if (typeof(idTratamientos) != 'string'){
+            if(idTratamientos && idCantidadesReal){
+                if(idTratamientos.length != idCantidadesReal.length ){
+                    console.log("Este arroja2");
+                    errors.push({text: 'Las cantidades ingresadas no coinciden con las cantidades seleccionadas'});
+                }
+            }
+    
+        }
+    
+        if (!idTratamientos) {
+            errors.push({text: 'No se seleccionaron tratamientos'});
+        }
+        if (!idCantidades) {
+            errors.push({text: 'No se seleccionaron tratamientos'});
+        }
+        if (!fechaVencimiento) {
+            errors.push({text: 'Por favor ingrese una fecha'});
+        }
 
     if (errors.length > 0) {
         console.log("LOG=====1");
