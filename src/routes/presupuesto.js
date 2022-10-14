@@ -272,7 +272,7 @@ router.put('/presupuestos/edit-presupuesto/:id',isAuthenticated, async (req,res)
         }
     }
 
-    console.log("t" + idTratamientos.length + "can" + idCantidadesReal.length );
+    //console.log("t" + idTratamientos.length + "can" + idCantidadesReal.length );
 
     if (typeof(idTratamientos) != 'string'){
         if(idTratamientos && idCantidadesReal){
