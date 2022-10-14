@@ -2,190 +2,227 @@
   Historia Clínica
 </h1>
 <div class="container">
-    <div class="panel panel-primary d-print-none">
-        <div class="panel-heading styles-info mt-5 text-white">
-            <h3 class="panel-title fs-4 ms-2">Información General</h3>
-        </div>
-        <div class="panel-body">
-            <ul id="listado">
-                
-                <li id="nombre" class="list-group-item modal-styles">
-                    Apellido: {{historia_clinica_paciente.apellido}}
-                </li>
-                
-                <li class="list-group-item modal-styles">
-                   Nombre: {{historia_clinica_paciente.nombre}}
-                </li>
-                <li class="list-group-item modal-styles">
-                    Número de Afiliado: {{historia_clinica_paciente.numeroAfiliado}}
-                </li>
-                <li class="list-group-item modal-styles">
-                   Fecha de nacimiento: {{historia_clinica_paciente.fechaCumpleanios}}
-                </li>
-                <li class="list-group-item modal-styles">
-                   E-mail: {{historia_clinica_paciente.email}}
-                </li>
-                <li class="list-group-item modal-styles">
-                   Nro teléfono: {{historia_clinica_paciente.telefono}}
-                </li>
-                <li class="list-group-item modal-styles">
-                   Obra Social: {{historia_clinica_paciente.obraSocial}}
-                </li>
-            </ul>
-        </div>
+  <div class="panel panel-primary d-print-none">
+    <div class="panel-heading styles-info mt-5 text-white">
+      <h3 class="panel-title fs-4 ms-2">Información General</h3>
     </div>
+    <div class="panel-body">
+      <ul id="listado">
 
-    <div class="panel panel-primary d-print-none">
-        <div class="panel-heading styles-info" >
-            <h3 class="panel-title text-white fs-4 ms-2">Datos de Domicilio</h3>
-        </div>
-        <div>
-            <ul>
-                
-                <li class="list-group-item modal-styles">
-                    Calle: {{historia_clinica_paciente.calle}}
-                </li>
-                <li class="list-group-item modal-styles">
-                   Numero: {{historia_clinica_paciente.numeroCalle}}
-                </li>
-                <li class="list-group-item modal-styles">
-                    Piso: {{historia_clinica_paciente.piso}}
-                </li>
-                <li class="list-group-item modal-styles">
-                  Depto:  {{historia_clinica_paciente.departamento}}
-                </li>
-                <li class="list-group-item modal-styles">
-                   localidad: {{historia_clinica_paciente.localidad}}
-                </li>
+        <li id="nombre" class="list-group-item modal-styles">
+          Apellido: {{historia_clinica_paciente.apellido}}
+        </li>
 
-            </ul>
-        </div>
+        <li class="list-group-item modal-styles">
+          Nombre: {{historia_clinica_paciente.nombre}}
+        </li>
+        <li class="list-group-item modal-styles">
+          Número de Afiliado: {{historia_clinica_paciente.numeroAfiliado}}
+        </li>
+        <li class="list-group-item modal-styles">
+          Fecha de nacimiento: {{historia_clinica_paciente.fechaCumpleanios}}
+        </li>
+        <li class="list-group-item modal-styles">
+          E-mail: {{historia_clinica_paciente.email}}
+        </li>
+        <li class="list-group-item modal-styles">
+          Nro teléfono: {{historia_clinica_paciente.telefono}}
+        </li>
+        <li class="list-group-item modal-styles">
+          Obra Social: {{historia_clinica_paciente.obraSocial}}
+        </li>
+      </ul>
     </div>
+  </div>
+
+  <div class="panel panel-primary d-print-none">
+    <div class="panel-heading styles-info">
+      <h3 class="panel-title text-white fs-4 ms-2">Datos de Domicilio</h3>
+    </div>
+    <div>
+      <ul>
+
+        <li class="list-group-item modal-styles">
+          Calle: {{historia_clinica_paciente.calle}}
+        </li>
+        <li class="list-group-item modal-styles">
+          Numero: {{historia_clinica_paciente.numeroCalle}}
+        </li>
+        <li class="list-group-item modal-styles">
+          Piso: {{historia_clinica_paciente.piso}}
+        </li>
+        <li class="list-group-item modal-styles">
+          Depto: {{historia_clinica_paciente.departamento}}
+        </li>
+        <li class="list-group-item modal-styles">
+          localidad: {{historia_clinica_paciente.localidad}}
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+
   <div class="d-flex justify-content-end">
-  <form>
-    <svg class="d-print-none btn btn-sm btn" width="60" height="60" name="imprimir" value="Imprimir" onclick="window.print();" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg>
-  </form>
+    {{!-- Hice que sea tabla para que queden ordenados uno arriba y otro abajo --}}
+    <table style="text-align: center; margin-right: 10px;">
+      <tr>
+        <td>
+          <svg class="d-print-none btn btn-sm btn" width="60" height="60" name="imprimir" value="Imprimir"
+            onclick="window.print();" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z" />
+          </svg>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="d-print-none mt-2" onclick="window.print();"
+            style="align-items: center; color: black; text-decoration: none">Imprimir</a>
+        </td>
+      </tr>
+    </table>
 
-    <a class="d-print-none mt-2" href="/users/historias-clinicas/{{historia_clinica_paciente.dni}}/treatments">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
-    </a>
-</div>
-{{!-- Esto es lo que se ve al momento de imprimir --}}
-    <div class="d-block d-sm-none">
+    <table style="text-align: center; margin-top: 8px; ">
+      <tr>
+        <td>
+          <a href="/users/historias-clinicas/{{historia_clinica_paciente.dni}}/treatments">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 448 512">
+              <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+            </svg>
+          </a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <a class="d-print-none mt-2" href="/users/historias-clinicas/{{historia_clinica_paciente.dni}}/treatments"
+            style="color: black; text-decoration: none">Tratamientos</a>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+
+  {{!-- Esto es lo que se ve al momento de imprimir --}}
+  <div class="d-block d-sm-none">
     <table class="table table-sm d-sm-none">
-    <thead>
+      <thead>
         <tr>
-            <th class="border-primary" scope="col">Informacion General</th>
+          <th class="border-primary" scope="col">Informacion General</th>
         </tr>
-    </thead>
-  <tbody class="border border-primary ">
-    <tr>
-      <th scope="row">Apellido</th>
-      <td>{{historia_clinica_paciente.apellido}} </td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Nombre</th>
-      <td>{{historia_clinica_paciente.nombre}}</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Numero de Afiliado</th>
-      <td>{{historia_clinica_paciente.numeroAfiliado}} </td>
-      <td></td>     
-    </tr>
-    <tr>
-      <th scope="row">Fecha de nacimiento</th>
-      <td>{{historia_clinica_paciente.fechaCumpleanios}}</td>
-      <td></td>     
-    </tr>
-    <tr>
-      <th scope="row">e-mail</th>
-      <td>{{historia_clinica_paciente.email}}</td>
-      <td></td>     
-    </tr>
-    <tr>
-      <th scope="row">Nro telefono</th>
-      <td>{{historia_clinica_paciente.telefono}}</td>
-      <td></td>     
-    </tr>
-    <tr>
-      <th scope="row"> Obra Social</th>
-      <td>{{historia_clinica_paciente.obraSocial}}</td>
-      <td></td>     
-    </tr>
-  </tbody>
-</table>
+      </thead>
+      <tbody class="border border-primary ">
+        <tr>
+          <th scope="row">Apellido</th>
+          <td>{{historia_clinica_paciente.apellido}} </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">Nombre</th>
+          <td>{{historia_clinica_paciente.nombre}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">Numero de Afiliado</th>
+          <td>{{historia_clinica_paciente.numeroAfiliado}} </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">Fecha de nacimiento</th>
+          <td>{{historia_clinica_paciente.fechaCumpleanios}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">e-mail</th>
+          <td>{{historia_clinica_paciente.email}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">Nro telefono</th>
+          <td>{{historia_clinica_paciente.telefono}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row"> Obra Social</th>
+          <td>{{historia_clinica_paciente.obraSocial}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
 
-<table class="table table-sm d-sm-none">
-    <thead>
+    <table class="table table-sm d-sm-none">
+      <thead>
         <tr>
-            <th class="border-primary" scope="col">Datos de Domicilio</th>
+          <th class="border-primary" scope="col">Datos de Domicilio</th>
         </tr>
-    </thead>
-  <tbody class="border border-primary">
-    <tr>
-      <th scope="row">Calle</th>
-      <td>{{historia_clinica_paciente.calle}}</td>
-     
-    </tr>
-    <tr>
-      <th scope="row">Numero</th>
-      <td>{{historia_clinica_paciente.numeroCalle}}</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">Piso</th>
-      <td>{{historia_clinica_paciente.piso}}</td>
-     
-    </tr>
-    <tr>
-      <th scope="row">Depto</th>
-      <td>{{historia_clinica_paciente.departamento}}</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">Localidad</th>
-      <td>{{historia_clinica_paciente.localidad}}</td>
-     
-    </tr>
-     </tbody>
-</table>
+      </thead>
+      <tbody class="border border-primary">
+        <tr>
+          <th scope="row">Calle</th>
+          <td>{{historia_clinica_paciente.calle}}</td>
+
+        </tr>
+        <tr>
+          <th scope="row">Numero</th>
+          <td>{{historia_clinica_paciente.numeroCalle}}</td>
+
+        </tr>
+        <tr>
+          <th scope="row">Piso</th>
+          <td>{{historia_clinica_paciente.piso}}</td>
+
+        </tr>
+        <tr>
+          <th scope="row">Depto</th>
+          <td>{{historia_clinica_paciente.departamento}}</td>
+
+        </tr>
+        <tr>
+          <th scope="row">Localidad</th>
+          <td>{{historia_clinica_paciente.localidad}}</td>
+
+        </tr>
+      </tbody>
+    </table>
 
 
 
     <table class="table table-striped table-light table-hover mt-6">
-                    <thead class="table-Color">
-                        <tr>
-                            <th>Tratamiento</th>
-                            <th>Nº Diente</th>
-                            <th>Fecha</th>
-                            <th>Cara</th>
-                            <th>Importe</th>
-                            <th>Observaciones</th>
-                            {{#if esOdontologo}}
-                            <th></th>
-                            {{/if}}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each treatments}}
-                        <tr>
-                            <td>{{nombre}}</td>
-                            <td>{{nroDiente}}</td>
-                            <td>{{fecha}}</td>
-                            <td>{{caraDiente}}</td>
-                            <td>{{importe}}</td>
-                            <td>{{observaciones}}</td>
-                        </tr>
-                        {{/each}}
+      <thead class="table-Color">
+        <tr>
+          <th>Tratamiento</th>
+          <th>Nº Diente</th>
+          <th>Fecha</th>
+          <th>Cara</th>
+          <th>Importe</th>
+          <th>Observaciones</th>
+          {{#if esOdontologo}}
+          <th></th>
+          {{/if}}
+        </tr>
+      </thead>
+      <tbody>
+        {{#each treatments}}
+        <tr>
+          <td>{{nombre}}</td>
+          <td>{{nroDiente}}</td>
+          <td>{{fecha}}</td>
+          <td>{{caraDiente}}</td>
+          <td>{{importe}}</td>
+          <td>{{observaciones}}</td>
+        </tr>
+        {{/each}}
 
 
-                </tbody>
-            </table>
+      </tbody>
+    </table>
 
 
-    </div>
+  </div>
 
-    
+
 </div>
