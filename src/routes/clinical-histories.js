@@ -11,7 +11,7 @@ router.post('/users/historias-clinicas/search', isAuthenticated, async (req,res)
     console.log("El dni buscado es.."+dniPaciente);
     //var usersdatas = await User.find({esOdontologo: false}).lean();
     if (dniPaciente != ""){   
-        usersdatas = await User.find({dni: { "$regex": dniPaciente, "$options": "i" }}).lean();
+        usersdatas = await User.find({esOdontologo: false, dni: { "$regex": dniPaciente, "$options": "i"}}).lean();
     }
     else{
         usersdatas = await User.find({esOdontologo: false}).lean();
