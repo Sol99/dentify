@@ -12,9 +12,8 @@
                                 <th>Importe Total</th>
                                 <th>Observaciones</th>
                                 <th>Estado</th>
-                                {{#if esOdontologo}}
                                 <th></th>
-                                {{/if}}
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -26,7 +25,8 @@
                                 <td>{{fechaVencimiento}}</td>
                                 <td>${{importeTotal}}</td>
                                 <td>{{observaciones}}</td>
-                                <td>Pendiente</td>
+                                <td>{{estado}}</td>
+                                
                                 
                                 {{#if ../esOdontologo}}
                                 <td>
@@ -60,6 +60,47 @@
                                     </div>
                                 </td>
                                 {{/if}}
+                                {{#unless ../esOdontologo}}
+                                
+                                        {{#if esPendiente}}
+                                            <td>
+                                                <div class="styles-button" style="padding-left: 13%;">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="POST">
+                                                        <input type="hidden" name="estado" value="Aprobado">
+                                                        <button class="btn btn-outline-success btn-sm" type="submit">Aprobar</button>  
+                                                    </form>
+                                                </div>
+                                                <div class="styles-button">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="POST">
+                                                        <input type="hidden" name="estado" value="Rechazado">
+                                                        <button class="btn btn-outline-danger btn-sm" type="submit">Rechazar</button>  
+                                                    </form>
+                                                </div>
+                                            </td>
+
+                                        {{/if}}
+
+                                        {{#unless esPendiente}}
+                                            <td>
+                                                <div class="styles-button" style="padding-left: 13%;">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="PUT">
+                                                        <input type="hidden" name="_method" value="Aprobado">
+                                                        <button class="btn btn-outline btn-sm" type="submit" disabled></button>  
+                                                    </form>
+                                                </div>
+                                                <div class="styles-button">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="PUT">
+                                                        <input type="hidden" name="_method" value="Rechazado">
+                                                        <button class="btn btn-outline btn-sm" type="submit" disabled></button>  
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        {{/unless}}
+
+
+
+                                {{/unless}}
+                               
                             </tr>
                             {{/each}}
                         </tbody>
@@ -72,6 +113,7 @@
                         Nuevo Presupuesto
                     </a>
                     {{/if}}
+                    
                     
                 </div>
             </div>

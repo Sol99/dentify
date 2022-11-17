@@ -20,7 +20,11 @@ router.get('/presupuesto', isAuthenticated, async (req,res)=> {
        res.render('budgets/presupuestos',  { usersdatas });
     }
     else{
-        res.render('budgets/presupuesto-paciente',  { userdata });
+
+        var presupuestos = await Presupuesto.find({paciente: userdata[0]._id }).lean();
+        console.log("id del paciente: " +  JSON.stringify(userdata))
+        console.log("Estos son los presupuestos del paciente: " + JSON.stringify(presupuestos));
+        res.render('budgets/presupuesto-paciente',  { userdata, presupuestos });
     }
     
 });
@@ -248,6 +252,31 @@ router.get('/presupuestos/edit/:id',isAuthenticated, async (req,res) =>{
     console.log("Fin de mostrado");
     res.render('budgets/new-budget', { pacienteSeleccionado, treatments, datosJson, arregloTratamientos });
 }); */
+
+router.put('/presupuestos/changestate/:id',isAuthenticated, async (req,res) =>{
+
+    var { estado }= req.body;
+
+    var presupuestoSeleccionado = await Presupuesto.findById(req.params.id).lean();
+    console.log("EL ID ES: " + JSON.stringify(presupuestoSeleccionado));
+    presupuestoSeleccionado.estado = estado;
+    presupuestoSeleccionado.esPendiente = false;
+    
+    console.log("EL ESTADO QUE SE PASA ES" + estado);
+    console.log("EL ID ES: " + JSON.stringify(presupuestoSeleccionado));
+
+    await Presupuesto.findByIdAndUpdate(req.params.id, {estado: estado, esPendiente: false}).lean();
+    
+    if (estado == "Aprobado"){
+        req.flash('success_msg', 'Presupuesto aprobado correctamente!');
+    }
+    else{
+        req.flash('success_msg', 'Presupuesto rechazado correctamente!');
+    }
+
+    res.redirect('/presupuesto');
+
+});
 
 router.put('/presupuestos/edit-presupuesto/:id',isAuthenticated, async (req,res) =>{
 
