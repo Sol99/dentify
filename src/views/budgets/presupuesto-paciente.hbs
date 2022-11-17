@@ -13,6 +13,10 @@
                                 <th>Observaciones</th>
                                 <th>Estado</th>
                                 <th></th>
+                                {{#if esOdontologo}}
+                                <th>Registrar pago</th>
+                                <th>Acciones</th>
+                                {{/if}}
                                 
                             </tr>
                         </thead>
@@ -29,6 +33,34 @@
                                 
                                 
                                 {{#if ../esOdontologo}}
+
+                                <td>
+
+                                        {{#if esAprobado}}
+                                            <td>
+                                                <div class="styles-button" style="padding-left: 13%;">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="POST">
+                                                        <input type="hidden" name="estado" value="Pagado">
+                                                        <button class="btn btn-outline-success btn-sm" type="submit">Pagado</button>  
+                                                    </form>
+                                                </div>
+                                            </td>
+
+                                        {{/if}}
+
+                                        {{#unless esAprobado}}
+                                            <td>
+                                                <div class="styles-button" style="padding-left: 13%;">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="PUT">
+                                                        <input type="hidden" name="_method" value="Pagado">
+                                                        <button class="btn btn-outline btn-sm" type="submit" disabled></button>  
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        {{/unless}}
+                                    
+                                </td>
+
                                 <td>
                                     
                                     <div class="styles-button">

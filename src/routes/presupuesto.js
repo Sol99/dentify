@@ -253,7 +253,7 @@ router.get('/presupuestos/edit/:id',isAuthenticated, async (req,res) =>{
     res.render('budgets/new-budget', { pacienteSeleccionado, treatments, datosJson, arregloTratamientos });
 }); */
 
-router.put('/presupuestos/changestate/:id',isAuthenticated, async (req,res) =>{
+router.put('/presupuestos/changestate/:id',isAuthenticated, async (req,res,next) =>{
 
     var { estado }= req.body;
 
@@ -261,20 +261,34 @@ router.put('/presupuestos/changestate/:id',isAuthenticated, async (req,res) =>{
     console.log("EL ID ES: " + JSON.stringify(presupuestoSeleccionado));
     presupuestoSeleccionado.estado = estado;
     presupuestoSeleccionado.esPendiente = false;
+    if (estado == "Aprobado"){
+        presupuestoSeleccionado.esAprobado = true;
+    }
+    if (estado == "Pagado"){
+        presupuestoSeleccionado.esAprobado = false;
+    }
     
-    console.log("EL ESTADO QUE SE PASA ES" + estado);
-    console.log("EL ID ES: " + JSON.stringify(presupuestoSeleccionado));
 
-    await Presupuesto.findByIdAndUpdate(req.params.id, {estado: estado, esPendiente: false}).lean();
+    await Presupuesto.findByIdAndUpdate(req.params.id, {estado: estado, esPendiente: false, esAprobado: presupuestoSeleccionado.esAprobado }).lean();
     
     if (estado == "Aprobado"){
         req.flash('success_msg', 'Presupuesto aprobado correctamente!');
     }
-    else{
+    if (estado == "Rechazado"){
         req.flash('success_msg', 'Presupuesto rechazado correctamente!');
     }
+    if (estado == "Pagado"){
+        req.flash('success_msg', 'Se registró el pago del presupuesto correctamente!');
+    }
 
-    res.redirect('/presupuesto');
+    if (estado == "Pagado"){
+        
+        res.redirect('back');
+    }
+    else{
+        res.redirect('/presupuesto');
+    }
+    
 
 });
 
