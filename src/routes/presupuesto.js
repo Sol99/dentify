@@ -140,12 +140,14 @@ router.post('/presupuesto/new-budget', isAuthenticated, async (req,res) =>{
         console.log("El id que se esta pasando es: " + paciente);
         
         presupuestoPaciente = await Presupuesto.find({paciente: paciente}).lean();
+
+        presupuestosAll = await Presupuesto.find().lean();
         
-        if(presupuestoPaciente == null){
+        if(presupuestosAll == null){
             codigo = 0;
         }    
         else{
-            codigo = presupuestoPaciente.length + 1;
+            codigo = presupuestosAll.length + 1;
         }
         
         var f = new Date();
