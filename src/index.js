@@ -56,6 +56,9 @@ app.use(require("./routes/users"));
 app.use(require("./routes/treatments"));
 app.use(require("./routes/clinical-histories"));
 app.use(require("./routes/presupuesto"));
+app.use(require("./routes/appointments"));
+
+
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public")));
