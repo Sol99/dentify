@@ -10,7 +10,10 @@ const PresupuestoSchema = new Schema ({
     importeTotal: { type: String},
     paciente: {type: String},
     observaciones: {type:String},
-    idOdontologo: {type:String}
+    idOdontologo: {type:String},
+    estado: {type:String, default: 'Pendiente'},
+    esPendiente: {type: Boolean, default: true},
+    esAprobado: {type: Boolean, default: false}
 });
 
 module.exports = mongoose.model('Presupuesto', PresupuestoSchema);

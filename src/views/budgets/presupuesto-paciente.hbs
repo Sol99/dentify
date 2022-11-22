@@ -12,9 +12,12 @@
                                 <th>Importe Total</th>
                                 <th>Observaciones</th>
                                 <th>Estado</th>
-                                {{#if esOdontologo}}
                                 <th></th>
+                                {{#if esOdontologo}}
+                                <th>Registrar pago</th>
+                                <th>Acciones</th>
                                 {{/if}}
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -26,9 +29,38 @@
                                 <td>{{fechaVencimiento}}</td>
                                 <td>${{importeTotal}}</td>
                                 <td>{{observaciones}}</td>
-                                <td>Pendiente</td>
+                                <td>{{estado}}</td>
+                                
                                 
                                 {{#if ../esOdontologo}}
+
+                                <td>
+
+                                        {{#if esAprobado}}
+                                            <td>
+                                                <div class="styles-button" style="padding-left: 13%;">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="POST">
+                                                        <input type="hidden" name="estado" value="Pagado">
+                                                        <button class="btn btn-outline-success btn-sm" type="submit">Pagado</button>  
+                                                    </form>
+                                                </div>
+                                            </td>
+
+                                        {{/if}}
+
+                                        {{#unless esAprobado}}
+                                            <td>
+                                                <div class="styles-button" style="padding-left: 13%;">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="PUT">
+                                                        <input type="hidden" name="_method" value="Pagado">
+                                                        <button class="btn btn-outline btn-sm" type="submit" disabled></button>  
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        {{/unless}}
+                                    
+                                </td>
+
                                 <td>
                                     
                                     <div class="styles-button">
@@ -60,6 +92,47 @@
                                     </div>
                                 </td>
                                 {{/if}}
+                                {{#unless ../esOdontologo}}
+                                
+                                        {{#if esPendiente}}
+                                            <td>
+                                                <div class="styles-button" style="padding-left: 13%;">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="POST">
+                                                        <input type="hidden" name="estado" value="Aprobado">
+                                                        <button class="btn btn-outline-success btn-sm" type="submit">Aprobar</button>  
+                                                    </form>
+                                                </div>
+                                                <div class="styles-button">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="POST">
+                                                        <input type="hidden" name="estado" value="Rechazado">
+                                                        <button class="btn btn-outline-danger btn-sm" type="submit">Rechazar</button>  
+                                                    </form>
+                                                </div>
+                                            </td>
+
+                                        {{/if}}
+
+                                        {{#unless esPendiente}}
+                                            <td>
+                                                <div class="styles-button" style="padding-left: 13%;">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="PUT">
+                                                        <input type="hidden" name="_method" value="Aprobado">
+                                                        <button class="btn btn-outline btn-sm" type="submit" disabled></button>  
+                                                    </form>
+                                                </div>
+                                                <div class="styles-button">
+                                                    <form action="/presupuestos/changestate/{{_id}}?_method=PUT" method="PUT">
+                                                        <input type="hidden" name="_method" value="Rechazado">
+                                                        <button class="btn btn-outline btn-sm" type="submit" disabled></button>  
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        {{/unless}}
+
+
+
+                                {{/unless}}
+                               
                             </tr>
                             {{/each}}
                         </tbody>
@@ -68,10 +141,11 @@
                     <!-- Modal Agregar tratamiento -->
                     
                     {{#if esOdontologo}}
-                    <a href="/presupuesto/{{pacienteSeleccionado._id}}/new" class="btn style-button col-3" style="text-align: center;">
+                    <a href="/presupuesto/{{pacienteSeleccionado._id}}/new" class="btn style-button col-2" style="text-align: center;">
                         Nuevo Presupuesto
                     </a>
                     {{/if}}
+                    
                     
                 </div>
             </div>

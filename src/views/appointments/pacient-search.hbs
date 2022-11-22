@@ -1,0 +1,49 @@
+<div class="row d-flex justify-content-md-center">
+  <h1 class="fs-2 text-center border-color">
+    Citas
+  </h1>
+
+
+  <div class="mt-5 col-8">
+    {{#if esOdontologo}}
+      <div>
+        
+          <a class="button-search" href="/appointments/appointment-calendar">Ver Calendario De Citas</a>
+
+      </div>
+    {{/if}}
+    <form action="/appointments/search" method="POST">
+      <div class="d-flex justify-content-end p-2">
+        <div class="me-2">
+            <input type="text" class="form-control" placeholder="Ingrese el DNI" name="dniPaciente" value="{{dniPaciente}}">
+        </div>
+        <button class="button-search" type="submit">
+          Buscar
+        </button>
+      </div>
+    </form>
+    
+    <div class="table-responsive">
+      <table class="table table-striped table-light table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Paciente</th>
+            <th scope="col">DNI</th>
+            <th scope="col">Odontólogo</th>
+            <th scope="col" style="padding-left: 4%;">Cita</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each usersdatas}}
+          <tr>
+            <th scope="row">{{nombre}} {{apellido}}</th>
+            <td>{{dni}}</td>
+            <td>Ivan Guasch Vives</td>
+            <td><a class="btn btn-outline-success button1 btn-sm p-2" style="width: 50% ;" href="/appointments/{{_id}}">Ver Citas</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
