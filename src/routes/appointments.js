@@ -11,23 +11,176 @@ const treatmentsJson = require('../views/treatments/treatments.json');
 router.get('/appointments', isAuthenticated, async (req,res)=> {
 
     const userdata = await User.find({_id: req.user.id}).lean();
+    var esOdontologo = false;
     //console.log(userdata[0].apellido);
     if (userdata[0].esOdontologo == true){
+        esOdontologo = true;
         console.log("ACA ENTRA PORQUE ES ODONTOLOGO");
         const usersdatas = await User.find({esOdontologo: false}).lean();
        // console.log("imprimiendo");
        // console.log(usersdatas);
 
-       res.render('appointments/pacient-search',  { usersdatas });
+       res.render('appointments/pacient-search',  { usersdatas, esOdontologo });
     }
     else{
 
         var appointments = await Appointment.find({paciente: userdata[0]._id }).lean();
         console.log("id del paciente: " +  JSON.stringify(userdata))
         console.log("Estos son los presupuestos del paciente: " + JSON.stringify(appointments));
-        res.render('appointments/appointments-paciente',  { userdata, appointments });
+        res.render('appointments/appointments-paciente',  { userdata, appointments, esOdontologo });
     }
     
+});
+
+router.get('/appointments/appointment-calendar', isAuthenticated, async (req,res)=> {
+
+    const userdata = await User.find({_id: req.user.id}).lean();
+
+    const pacientes = await User.find({esOdontologo: false}).lean();
+
+    res.render('appointments/calendar',  { userdata, pacientes });
+    
+    
+});
+
+router.post('/appointments/pacient-search', isAuthenticated, async (req,res)=>{
+    var {dniPaciente} = req.body;
+    var usersdatas;
+    appointments = new Array();
+    console.log("El dni buscado es.." + dniPaciente);
+    //var usersdatas = await User.find({esOdontologo: false}).lean();
+    if (dniPaciente != ""){   
+        usersdatas = await User.find({esOdontologo: false, dni: { "$regex": dniPaciente, "$options": "i" }}).lean();
+
+        usersdatas.forEach(async element1 =>  {
+
+            
+
+            console.log("El elemnto es: " + element1.dni);
+            console.log("El elemnto es: " + element1._id);
+            appointmentsEncontradas = await Appointment.find({paciente: element1._id}).lean();
+
+            
+            appointmentsEncontradas.forEach(async element2 => {
+                
+               
+
+                presupuestosEncontrados = await Presupuesto.find({_id: element2.idPresupuestos[0]}).lean();
+
+                presupuestosEncontrados.forEach(element3 => {
+
+                    var appointment = new Object();
+                    appointment.paciente = element1.nombre + " " + element1.apellido;
+                    appointment.dni = element1.dni;
+                    appointment.hora = element2.hora;
+                    appointment.estadoPresupuesto = element3.estado;
+                    
+                    appointments.push(appointment);
+
+                })
+
+
+            })
+
+            
+            
+        });
+
+    }
+    else{
+       
+        usersdatas = await User.find({esOdontologo: false}).lean();
+
+        usersdatas.forEach(async element1 =>  {
+
+            
+
+            console.log("El elemnto es: " + element1.dni);
+            console.log("El elemnto es: " + element1._id);
+            appointmentsEncontradas = await Appointment.find({paciente: element1._id}).lean();
+
+            
+            appointmentsEncontradas.forEach(async element2 => {
+                
+               
+
+                presupuestosEncontrados = await Presupuesto.find({_id: element2.idPresupuestos[0]}).lean();
+
+                presupuestosEncontrados.forEach(element3 => {
+
+                    var appointment = new Object();
+                    appointment.paciente = element1.nombre + " " + element1.apellido;
+                    appointment.dni = element1.dni;
+                    appointment.hora = element2.hora;
+                    appointment.estadoPresupuesto = element3.estado;
+                    
+                    appointments.push(appointment);
+
+                })
+
+
+            })
+
+            
+            
+        });
+
+
+    }
+    
+
+    res.render('appointments/calendar.hbs', {appointments,dniPaciente});
+});
+
+
+//filtro 
+router.post('/appointments/pacient-filter', isAuthenticated, async (req,res)=>{
+    var {fecha, estado} = req.body;
+
+    appointments = new Array();
+
+    var appointmentsEncontradas;
+
+    
+    
+    appointmentsEncontradas = await Appointment.find({fecha: fecha}).lean();
+   
+
+    appointmentsEncontradas.forEach( async element1 => {
+
+
+        if (estado != "Todos los presupuestos"){
+            presupuestoEncontrado = await Presupuesto.find({_id: element1.idPresupuestos[0], estado: estado}).lean();
+        }
+        else
+        {
+            presupuestoEncontrado = await Presupuesto.find({_id: element1.idPresupuestos[0]}).lean();
+        }
+
+        console.log("El presupuesto encontrado es: " + JSON.stringify(presupuestoEncontrado));
+        pacienteEncontrado = await User.find({_id: element1.paciente}).lean();
+        console.log("El paciente encontrado es: " + JSON.stringify(pacienteEncontrado));
+
+        var appointment = new Object();
+        appointment.paciente = pacienteEncontrado[0].nombre + " " + pacienteEncontrado[0].apellido;
+        appointment.dni = pacienteEncontrado[0].dni;
+        appointment.hora = element1.hora;
+        
+        if (presupuestoEncontrado.length != 0) {
+
+            appointment.estadoPresupuesto = presupuestoEncontrado[0].estado;
+            
+            appointments.push(appointment);
+        }
+                
+
+                    
+
+
+    });
+
+
+    res.render('appointments/calendar.hbs', {appointments,fecha,estado});
 });
 
 router.get('/appointments/:id',isAuthenticated, async (req,res) =>{
@@ -130,5 +283,7 @@ router.put('/appointments/edit-appointment/:id',isAuthenticated, async (req,res)
     res.redirect(url);
 
 });
+
+
 
 module.exports = router;
