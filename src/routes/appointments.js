@@ -73,6 +73,7 @@ router.post('/appointments/pacient-search', isAuthenticated, async (req,res)=>{
                     appointment.paciente = element1.nombre + " " + element1.apellido;
                     appointment.dni = element1.dni;
                     appointment.hora = element2.hora;
+                    appointment.fecha = element2.fecha;
                     appointment.estadoPresupuesto = element3.estado;
                     
                     appointments.push(appointment);
@@ -112,6 +113,7 @@ router.post('/appointments/pacient-search', isAuthenticated, async (req,res)=>{
                     appointment.paciente = element1.nombre + " " + element1.apellido;
                     appointment.dni = element1.dni;
                     appointment.hora = element2.hora;
+                    appointment.fecha = element2.fecha;
                     appointment.estadoPresupuesto = element3.estado;
                     
                     appointments.push(appointment);
@@ -165,6 +167,8 @@ router.post('/appointments/pacient-filter', isAuthenticated, async (req,res)=>{
         appointment.paciente = pacienteEncontrado[0].nombre + " " + pacienteEncontrado[0].apellido;
         appointment.dni = pacienteEncontrado[0].dni;
         appointment.hora = element1.hora;
+        appointment.fecha = element1.fecha;
+
         
         if (presupuestoEncontrado.length != 0) {
 
