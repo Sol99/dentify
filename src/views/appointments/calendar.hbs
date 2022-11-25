@@ -54,6 +54,16 @@
                 </thead>
                 <tbody>
 
+                    {{#unless appointments}}
+                    <td>No hay Resultados.</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    {{/unless}}
+
                     {{#each appointments}}
                     <tr>
                         <th scope="row">{{fecha}}</th>
