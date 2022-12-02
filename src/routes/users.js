@@ -94,7 +94,14 @@ router.get('/users/historias-clinicas', isAuthenticated, async (req,res) =>{
         res.render('users/historias-clinicas-pacientes',  { usersdatas });
     }
     else{
-        res.render('users/historia-clinica',  { userdata });
+        var historia_clinica_paciente = await User.findById({_id: req.user.id}).lean();
+        dniArray = new Array;
+        dniArray.push(historia_clinica_paciente.dni.toString());
+        var treatments = await Treatment.find({paciente: dniArray}).lean();
+        console.log(treatments);
+        console.log(historia_clinica_paciente.dni.toString());
+
+        res.render('users/historia-clinica',  { userdata,treatments,historia_clinica_paciente });
     }
 
 });
