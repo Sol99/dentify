@@ -1,163 +1,197 @@
-
-{{#each userdata}}    
+{{#each userdata}}
+<h1 class="fs-2 text-center border-color">
+    Historia Clínica
+</h1>
 <div class="container">
-    <div class="panel panel-primary d-print-none" style="background-color: White;">
-        <div class="panel-heading" style="background-color: orange;">
-            <h3 class="panel-title">Información General</h3>
+    <div class="panel panel-primary d-print-none">
+        <div class="panel-heading styles-info mt-5 text-white">
+            <h3 class="panel-title fs-4 ms-2">Información General</h3>
         </div>
         <div class="panel-body">
             <ul id="listado">
-                
-                <li id="nombre">
+
+                <li id="nombre" class="list-group-item modal-styles">
                     Apellido: {{apellido}}
                 </li>
-                <li>
-                   Nombre: {{nombre}}
+                <li class="list-group-item modal-styles">
+                    Nombre: {{nombre}}
                 </li>
-                <li>
+                <li class="list-group-item modal-styles">
                     Numero de Afiliado: {{numeroAfiliado}}
                 </li>
-                <li>
-                   Fecha de nacimiento: {{fechaCumpleanios}}
+                <li class="list-group-item modal-styles">
+                    Fecha de nacimiento: {{fechaCumpleanios}}
                 </li>
-                <li>
-                   e-mail: {{email}}
+                <li class="list-group-item modal-styles">
+                    e-mail: {{email}}
                 </li>
-                <li>
-                   Nro telefono: {{telefono}}
+                <li class="list-group-item modal-styles">
+                    Nro telefono: {{telefono}}
                 </li>
-                <li>
-                   Obra Social: {{obraSocial}}
+                <li class="list-group-item modal-styles">
+                    Obra Social: {{obraSocial}}
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="panel panel-primary d-print-none" style="background-color: White;">
-        <div class="panel-heading" style="background-color: orange;">
-            <h3 class="panel-title">Datos de Domicilio</h3>
+    <div class="panel panel-primary d-print-none">
+        <div class="panel-heading styles-info">
+            <h3 class="panel-title text-white fs-4 ms-2">Datos de Domicilio</h3>
         </div>
-        <div class="panel-body" >
+        <div>
             <ul>
-                
-                <li>
+
+                <li class="list-group-item modal-styles">
                     Calle: {{calle}}
                 </li>
-                <li>
-                   Numero: {{numeroCalle}}
+                <li class="list-group-item modal-styles">
+                    Numero: {{numeroCalle}}
                 </li>
-                <li>
+                <li class="list-group-item modal-styles">
                     Piso: {{piso}}
                 </li>
-                <li>
-                  Depto:  {{departamento}}
+                <li class="list-group-item modal-styles">
+                    Depto: {{departamento}}
                 </li>
-                <li>
-                   localidad: {{localidad}}
+                <li class="list-group-item modal-styles">
+                    localidad: {{localidad}}
                 </li>
 
             </ul>
         </div>
     </div>
+  <div class="d-flex justify-content-end">
+    {{!-- Hice que sea tabla para que queden ordenados uno arriba y otro abajo --}}
+    <table style="text-align: center; margin-right: 10px;">
+      <tr>
+        <td>
+          <svg class="d-print-none btn btn-sm btn" width="60" height="60" name="imprimir" value="Imprimir"
+            onclick="window.print();" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z" />
+          </svg>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="d-print-none mt-2" onclick="window.print();"
+            style="align-items: center; color: black; text-decoration: none">Imprimir</a>
+        </td>
+      </tr>
+    </table>
 
-    <form>
-        <input class="d-print-none btn btn-light btn-sm" type="button" name="imprimir" value="Imprimir" onclick="window.print();">   
-    </form>
+    <table style="text-align: center; margin-top: 8px; ">
+      <tr>
+        <td>
+          <a href="/users/historias-clinicas/{{dni}}/treatments">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 448 512">
+              <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+            </svg>
+          </a>
+        </td>
+      </tr>
 
-    <a href="/users/historias-clinicas/{{dni}}/treatments">Ver Tratamientos</a>
-    
+      <tr>
+        <td>
+          <a class="d-print-none mt-2" href="/users/historias-clinicas/{{dni}}/treatments"
+            style="color: black; text-decoration: none">Ver Tratamientos</a>
+        </td>
+      </tr>
+    </table>
 
-{{!-- Esto es lo que se ve al momento de imprimir --}}
+  </div>
+    {{!-- Esto es lo que se ve al momento de imprimir --}}
     <div class="d-block d-sm-none">
 
         <p class="h1 text-center">Historia Clinica</p>
 
-
     <table class="table table-sm d-sm-none">
-    <thead>
+      <thead>
         <tr>
-            <th scope="col">Informacion General</th>
+          <th class="border-primary" scope="col">Informacion General</th>
         </tr>
-    </thead>
-  <tbody class="border border-primary ">
-    <tr>
-      <th scope="row">Apellido</th>
-      <td>{{apellido}} </td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Nombre</th>
-      <td>{{nombre}}</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">Numero de Afiliado</th>
-      <td>{{numeroAfiliado}} </td>
-      <td></td>     
-    </tr>
-    <tr>
-      <th scope="row">Fecha de nacimiento</th>
-      <td>{{fechaCumpleanios}}</td>
-      <td></td>     
-    </tr>
-    <tr>
-      <th scope="row">e-mail</th>
-      <td>{{email}}</td>
-      <td></td>     
-    </tr>
-    <tr>
-      <th scope="row">Nro telefono</th>
-      <td>{{telefono}}</td>
-      <td></td>     
-    </tr>
-    <tr>
-      <th scope="row"> Obra Social</th>
-      <td>{{obraSocial}}</td>
-      <td></td>     
-    </tr>
-  </tbody>
-</table>
+      </thead>
+            <tbody class="border border-primary ">
+                <tr>
+                    <th scope="row">Apellido</th>
+                    <td>{{apellido}} </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Nombre</th>
+                    <td>{{nombre}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Numero de Afiliado</th>
+                    <td>{{numeroAfiliado}} </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Fecha de nacimiento</th>
+                    <td>{{fechaCumpleanios}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">e-mail</th>
+                    <td>{{email}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">Nro telefono</th>
+                    <td>{{telefono}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row"> Obra Social</th>
+                    <td>{{obraSocial}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
 
-<table class="table table-sm d-sm-none">
-    <thead>
-        <tr>
-            <th scope="col">Datos de Domicilio</th>
-        </tr>
-    </thead>
-  <tbody class="border border-primary">
-    <tr>
-      <th scope="row">Calle</th>
-      <td>{{calle}}</td>
-     
-    </tr>
-    <tr>
-      <th scope="row">Numero</th>
-      <td>{{numeroCalle}}</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">Piso</th>
-      <td>{{piso}}</td>
-     
-    </tr>
-    <tr>
-      <th scope="row">Depto</th>
-      <td>{{departamento}}</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">Localidad</th>
-      <td>{{localidad}}</td>
-     
-    </tr>
-     </tbody>
-</table>
+        <table class="table table-sm d-sm-none">
+            <thead>
+                <tr>
+                    <th scope="col">Datos de Domicilio</th>
+                </tr>
+            </thead>
+            <tbody class="border border-primary">
+                <tr>
+                    <th scope="row">Calle</th>
+                    <td>{{calle}}</td>
 
+                </tr>
+                <tr>
+                    <th scope="row">Numero</th>
+                    <td>{{numeroCalle}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Piso</th>
+                    <td>{{piso}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Depto</th>
+                    <td>{{departamento}}</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">Localidad</th>
+                    <td>{{localidad}}</td>
+
+                </tr>
+            </tbody>
+        </table>
 
 
-        <table class="table table-striped table-light table-hover mt-5">
-                <thead class="table-Color">
-                    <tr>
+
+        <table class="table table-striped table-light table-hover mt-6">
+            <thead class="table-Color">
+                <tr>
                         <th>Código</th>
                         <th>Tratamiento</th>
                         <th>Nº Diente</th>
@@ -169,11 +203,11 @@
                         {{#if esOdontologo}}
                         <th></th>
                         {{/if}}
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each treatments}}
-                    <tr>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each treatments}}
+                <tr>
                         <td>{{codigo}}</td>
                         <td>{{nombre}}</td>
                         <td>{{nroDiente}}</td>
@@ -184,46 +218,47 @@
                         <td>{{matriculaOdontologo}}</td>
                         <td>{{observaciones}}</td>
                         {{#if ../esOdontologo}}
-                        <td>
-                            <div class="styles-button">
-                                <form action="/treatments/delete/{{_id}}?_method=DELETE" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <button class="btn btn-outline-danger btn-sm" type="submit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-dark" width="16" height="25"
-                                            fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                            <path
-                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                            <path fill-rule="evenodd"
-                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                        </svg>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="styles-button">
-
-                                <!--<a href="/treatments/edit/{{_id}}" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"></a>-->
-                                <a href="/treatments/edit/{{_id}}" class="btn btn-outline-success btn-sm ">
-                                    <svg class="text-dark" xmlns="http://www.w3.org/2000/svg" width="16" height="25"
-                                        fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <td>
+                        <div class="styles-button">
+                            <form action="/treatments/delete/{{_id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-outline-danger btn-sm" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-dark" width="16" height="25"
+                                        fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path
-                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                                         <path fill-rule="evenodd"
-                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                                     </svg>
-                                </a>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="styles-button">
 
-                            </div>
-                        </td>
-                        {{/if}}
-                    </tr>
-                    {{/each}}
+                            <!--<a href="/treatments/edit/{{_id}}" class="btn btn-primary btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"></a>-->
+                            <a href="/treatments/edit/{{_id}}" class="btn btn-outline-success btn-sm ">
+                                <svg class="text-dark" xmlns="http://www.w3.org/2000/svg" width="16" height="25"
+                                    fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path fill-rule="evenodd"
+                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                </svg>
+                            </a>
 
-                </tbody>
+                        </div>
+                    </td>
+                    {{/if}}
+                </tr>
+                {{/each}}
+
+            </tbody>
         </table>
 
 
     </div>
 
-    
+
 </div>
 {{/each}}
+
