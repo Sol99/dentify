@@ -1,0 +1,3 @@
+[build]
+ base= "movie-selector-app"
+ command = "CI= npm run build" 

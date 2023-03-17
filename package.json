@@ -1,7 +1,7 @@
 {
   "name": "dentify",
   "version": "1.0.0",
-  "description": "",
+  "description": "Presentación de dentify realizada con node js, express, javascript y mongodb",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
@@ -25,5 +25,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sol99/dentify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sol99/dentify/issues"
+  },
+  "homepage": "https://github.com/Sol99/dentify#readme"
 }
